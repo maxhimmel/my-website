@@ -19,7 +19,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <div className="sticky top-0 navbar shadow-xl z-50 bg-neutral text-neutral-content">
+        <div className="fixed top-0 navbar shadow-xl z-50 bg-neutral text-neutral-content">
           <div className="navbar-start">
             <ThemeController />
           </div>
@@ -28,7 +28,7 @@ export default function RootLayout({
           </div>
           <div className="navbar-end"></div>
         </div>
-        {children}
+        <div className="mt-16">{children}</div>
       </body>
     </html>
   );
