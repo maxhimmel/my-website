@@ -30,7 +30,7 @@ export function Entry({
         "
     >
       <hr className="hr-t" />
-      <Icon />
+      <Icon className="bg-neutral text-neutral-content" />
       <div className="timeline-entry bg-base-200 text-base-content shadow-lg rounded-lg p-4 m-4">
         <time className="font-mono italic">{date}</time>
         <div className="text-lg font-black">{title}</div>
@@ -43,11 +43,11 @@ export function Entry({
   );
 }
 
-function Icon() {
+function Icon({ className }: { className?: string }) {
   return (
     <div className="timeline-middle">
       <div className="size-5 p-0.5">
-        <div className="size-full bg-current rounded-full" />
+        <div className={`size-full rounded-full ${className}`} />
       </div>
     </div>
   );
