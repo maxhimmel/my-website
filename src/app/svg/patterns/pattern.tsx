@@ -14,7 +14,7 @@ export function Pattern({
 }: {
   className?: string;
   uuid?: string;
-  shapes: React.ReactNode[];
+  shapes: React.ReactNode;
   viewBoxWidth: number;
   viewBoxHeight: number;
   animations?: React.ReactNode[];
@@ -35,17 +35,13 @@ export function Pattern({
           width={viewBoxWidth}
           height={viewBoxHeight}
         >
-          {shapes.map((shape, i) => (
-            <React.Fragment key={i}>{shape}</React.Fragment>
-          ))}
+          {shapes}
 
           {animations && (
             <PatternSizeProvider
               value={{ width: viewBoxWidth, height: viewBoxHeight }}
             >
-              {animations.map((anim, i) => (
-                <React.Fragment key={i}>{anim}</React.Fragment>
-              ))}
+              {animations}
             </PatternSizeProvider>
           )}
         </pattern>
