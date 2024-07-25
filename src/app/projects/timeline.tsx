@@ -1,7 +1,11 @@
 import React from "react";
-import { entries } from "./entries";
+import { MarbleKnights } from "./publications/marbleKnights";
+import { Tobuscus } from "./publications/toboscus";
+import { DeerHunter } from "./publications/deerHunter";
 
 export function Timeline() {
+  const entries = [<MarbleKnights />, <Tobuscus />, <DeerHunter />];
+
   return (
     <ul className="timeline timeline-snap-icon max-xl:timeline-compact timeline-vertical">
       {entries.map((entry, i) => (

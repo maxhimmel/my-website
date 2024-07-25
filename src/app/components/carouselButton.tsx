@@ -1,18 +1,18 @@
 "use client";
 
-import React, { useRef } from "react";
+import React from "react";
 
 export function CarouselButton({
   target,
   children,
   className,
+  carousel,
 }: {
   target: number;
   children?: React.ReactNode;
   className?: string;
+  carousel: React.RefObject<HTMLDivElement>;
 }) {
-  const buttonRef = useRef<HTMLButtonElement>(null);
-
   return (
     <div
       className="h-full absolute even:left-0 odd:right-0 grid 
@@ -21,20 +21,15 @@ export function CarouselButton({
     "
     >
       <button
-        ref={buttonRef}
         className={`${className} btn-square rounded-none self-center opacity-0`}
         onClick={() => {
-          if (!buttonRef.current) return;
-
-          const carousel = buttonRef.current.ownerDocument.querySelector(
-            ".carousel"
-          ) as Element;
+          if (!carousel.current) return;
 
           const zeroIndex = target - 1;
-          const width = carousel.clientWidth;
+          const width = carousel.current.clientWidth;
           const targetXPixel = width * zeroIndex;
 
-          carousel.scrollTo(targetXPixel, 0);
+          carousel.current.scrollTo(targetXPixel, 0);
         }}
       >
         {children}
