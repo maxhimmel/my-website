@@ -1,9 +1,14 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import { ThemeController } from "./components/themeController";
 
 export const metadata: Metadata = {
   title: "Max Himmel",
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
 };
 
 export default function RootLayout({
