@@ -31,7 +31,7 @@ export function Entry({
     >
       <hr className="hr-t" />
       <Icon />
-      <div className="timeline-entry bg-base-200 shadow-lg rounded-lg p-4 m-4">
+      <div className="timeline-entry bg-base-200 text-base-content shadow-lg rounded-lg p-4 m-4">
         <time className="font-mono italic">{date}</time>
         <div className="text-lg font-black">{title}</div>
         <p className="drop-shadow-sm">{description}</p>
