@@ -4,10 +4,12 @@ export function StripesPattern({
   className,
   isBackground,
   children,
+  animations,
 }: {
   className?: string;
   isBackground?: boolean;
   children?: React.ReactNode;
+  animations?: React.ReactNode[];
 }) {
   if (!isBackground && children) {
     console.warn("WARN: Children are only rendered for background patterns.");
@@ -23,6 +25,7 @@ export function StripesPattern({
   ) : (
     <Pattern
       className={className}
+      animations={animations}
       viewBoxWidth={40}
       viewBoxHeight={1}
       shapes={[<rect x="0" y="0" width="20" height="1"></rect>]}

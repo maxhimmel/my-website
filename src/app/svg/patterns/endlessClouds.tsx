@@ -4,10 +4,12 @@ export function EndlessCloudsPattern({
   className,
   isBackground,
   children,
+  animations,
 }: {
   className?: string;
   isBackground?: boolean;
   children?: React.ReactNode;
+  animations?: React.ReactNode[];
 }) {
   if (!isBackground && children) {
     console.warn("WARN: Children are only rendered for background patterns.");
@@ -23,6 +25,7 @@ export function EndlessCloudsPattern({
   ) : (
     <Pattern
       className={className}
+      animations={animations}
       viewBoxWidth={56}
       viewBoxHeight={28}
       shapes={[

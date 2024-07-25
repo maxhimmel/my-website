@@ -4,10 +4,12 @@ export function PlusPattern({
   className,
   isBackground,
   children,
+  animations,
 }: {
   className?: string;
   isBackground?: boolean;
   children?: React.ReactNode;
+  animations?: React.ReactNode[];
 }) {
   if (!isBackground && children) {
     console.warn("WARN: Children are only rendered for background patterns.");
@@ -23,6 +25,7 @@ export function PlusPattern({
   ) : (
     <Pattern
       className={className}
+      animations={animations}
       viewBoxWidth={60}
       viewBoxHeight={60}
       shapes={[

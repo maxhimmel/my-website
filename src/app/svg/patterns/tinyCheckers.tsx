@@ -4,10 +4,12 @@ export function TinyCheckersPattern({
   className,
   isBackground,
   children,
+  animations,
 }: {
   className?: string;
   isBackground?: boolean;
   children?: React.ReactNode;
+  animations?: React.ReactNode[];
 }) {
   if (!isBackground && children) {
     console.warn("WARN: Children are only rendered for background patterns.");
@@ -23,6 +25,7 @@ export function TinyCheckersPattern({
   ) : (
     <Pattern
       className={className}
+      animations={animations}
       viewBoxWidth={8}
       viewBoxHeight={8}
       shapes={[<path d="M0 0h4v4H0V0zm4 4h4v4H4V4z" />]}

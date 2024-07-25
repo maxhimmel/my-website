@@ -6,10 +6,12 @@ export function WigglePattern({
   className,
   isBackground,
   children,
+  animations,
 }: {
   className?: string;
   isBackground?: boolean;
   children?: React.ReactNode;
+  animations?: React.ReactNode[];
 }) {
   if (!isBackground && children) {
     console.warn("WARN: Children are only rendered for background patterns.");
@@ -28,6 +30,7 @@ export function WigglePattern({
   ) : (
     <Pattern
       className={className}
+      animations={animations}
       viewBoxWidth={52}
       viewBoxHeight={26}
       shapes={[

@@ -4,10 +4,12 @@ export function FormalInvitationPattern({
   className,
   isBackground,
   children,
+  animations,
 }: {
   className?: string;
   isBackground?: boolean;
   children?: React.ReactNode;
+  animations?: React.ReactNode[];
 }) {
   if (!isBackground && children) {
     console.warn("WARN: Children are only rendered for background patterns.");
@@ -23,6 +25,7 @@ export function FormalInvitationPattern({
   ) : (
     <Pattern
       className={className}
+      animations={animations}
       viewBoxWidth={100}
       viewBoxHeight={18}
       shapes={[
