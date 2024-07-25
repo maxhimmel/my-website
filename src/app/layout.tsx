@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import { ThemeController } from "./components/themeController";
+import { BackgroundLayout } from "./components/backgroundLayout";
 
 export const metadata: Metadata = {
   title: "Max Himmel",
@@ -28,6 +29,9 @@ export default function RootLayout({
           </div>
           <div className="navbar-end"></div>
         </div>
+
+        <BackgroundLayout />
+
         <div className="mt-16">{children}</div>
       </body>
     </html>
