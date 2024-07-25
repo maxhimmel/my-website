@@ -28,11 +28,13 @@ export function FlippedDiamondsPattern({
       animations={animations}
       viewBoxWidth={16}
       viewBoxHeight={20}
-      shapes={[
-        <polygon points="8 -4.4408921e-16 8 20 0 10"></polygon>,
-        <polygon points="16 0 16 10 8 0"></polygon>,
-        <polygon points="16 10 16 20 8 20"></polygon>,
-      ]}
+      shapes={
+        <g>
+          <polygon points="8 -4.4408921e-16 8 20 0 10"></polygon>
+          <polygon points="16 0 16 10 8 0"></polygon>
+          <polygon points="16 10 16 20 8 20"></polygon>
+        </g>
+      }
     />
   );
 }

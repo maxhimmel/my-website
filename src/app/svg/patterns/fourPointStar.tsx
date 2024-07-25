@@ -28,7 +28,7 @@ export function FourPointStarPattern({
       animations={animations}
       viewBoxWidth={24}
       viewBoxHeight={24}
-      shapes={[<polygon points="8 4 12 6 8 8 6 12 4 8 0 6 4 4 6 0 8 4" />]}
+      shapes={<polygon points="8 4 12 6 8 8 6 12 4 8 0 6 4 4 6 0 8 4" />}
     />
   );
 }

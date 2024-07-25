@@ -28,9 +28,9 @@ export function FloorTilePattern({
       animations={animations}
       viewBoxWidth={30}
       viewBoxHeight={30}
-      shapes={[
-        <path d="M0,10 L10,10 L10,20 L0,20 L0,10 Z M10,0 L20,0 L20,10 L10,10 L10,0 Z"></path>,
-      ]}
+      shapes={
+        <path d="M0,10 L10,10 L10,20 L0,20 L0,10 Z M10,0 L20,0 L20,10 L10,10 L10,0 Z"></path>
+      }
     />
   );
 }

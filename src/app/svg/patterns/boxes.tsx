@@ -28,7 +28,7 @@ export function BoxesPattern({
       animations={animations}
       viewBoxWidth={20}
       viewBoxHeight={20}
-      shapes={[<polygon points="0 0 20 0 0 20" />]}
+      shapes={<polygon points="0 0 20 0 0 20" />}
     />
   );
 }

@@ -28,12 +28,14 @@ export function HoundstoothPattern({
       animations={animations}
       viewBoxWidth={24}
       viewBoxHeight={24}
-      shapes={[
-        <polygon points="1.99840144e-15 18 6 18 12 12 12 18 18 18 12 24 3.99680289e-15 24"></polygon>,
-        <polygon points="24 18 24 24 18 24"></polygon>,
-        <polygon points="24 1.77635684e-15 18 6 12 6 18 1.77635684e-15"></polygon>,
-        <polygon points="12 -4.08562073e-14 12 6 0 18 1.99840144e-15 12 6 6 1.99840144e-15 6 1.99840144e-15 1.11022302e-15"></polygon>,
-      ]}
+      shapes={
+        <g>
+          <polygon points="1.99840144e-15 18 6 18 12 12 12 18 18 18 12 24 3.99680289e-15 24"></polygon>
+          <polygon points="24 18 24 24 18 24"></polygon>
+          <polygon points="24 1.77635684e-15 18 6 12 6 18 1.77635684e-15"></polygon>
+          <polygon points="12 -4.08562073e-14 12 6 0 18 1.99840144e-15 12 6 6 1.99840144e-15 6 1.99840144e-15 1.11022302e-15"></polygon>
+        </g>
+      }
     />
   );
 }

@@ -28,7 +28,7 @@ export function TexturePattern({
       animations={animations}
       viewBoxWidth={4}
       viewBoxHeight={4}
-      shapes={[<path d="M1 3h1v1H1V3zm2-2h1v1H3V1z"></path>]}
+      shapes={<path d="M1 3h1v1H1V3zm2-2h1v1H3V1z"></path>}
     />
   );
 }

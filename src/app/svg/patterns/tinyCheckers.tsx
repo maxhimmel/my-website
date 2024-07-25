@@ -28,7 +28,7 @@ export function TinyCheckersPattern({
       animations={animations}
       viewBoxWidth={8}
       viewBoxHeight={8}
-      shapes={[<path d="M0 0h4v4H0V0zm4 4h4v4H4V4z" />]}
+      shapes={<path d="M0 0h4v4H0V0zm4 4h4v4H4V4z" />}
     />
   );
 }

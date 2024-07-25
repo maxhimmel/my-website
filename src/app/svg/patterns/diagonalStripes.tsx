@@ -28,10 +28,12 @@ export function DiagonalStripesPattern({
       animations={animations}
       viewBoxWidth={40}
       viewBoxHeight={40}
-      shapes={[
-        <polygon points="0 40 40 0 20 0 0 20"></polygon>,
-        <polygon points="40 40 40 20 20 40"></polygon>,
-      ]}
+      shapes={
+        <g>
+          <polygon points="0 40 40 0 20 0 0 20"></polygon>
+          <polygon points="40 40 40 20 20 40"></polygon>
+        </g>
+      }
     />
   );
 }

@@ -28,10 +28,12 @@ export function PolkaDotsPattern({
       animations={animations}
       viewBoxWidth={20}
       viewBoxHeight={20}
-      shapes={[
-        <circle cx="3" cy="3" r="3"></circle>,
-        <circle cx="13" cy="13" r="3"></circle>,
-      ]}
+      shapes={
+        <g>
+          <circle cx="3" cy="3" r="3"></circle>
+          <circle cx="13" cy="13" r="3"></circle>
+        </g>
+      }
     />
   );
 }

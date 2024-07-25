@@ -28,10 +28,12 @@ export function DiagonalLinesPattern({
       animations={animations}
       viewBoxWidth={6}
       viewBoxHeight={6}
-      shapes={[
-        <polygon points="5 0 6 0 0 6 0 5"></polygon>,
-        <polygon points="6 5 6 6 5 6"></polygon>,
-      ]}
+      shapes={
+        <g>
+          <polygon points="5 0 6 0 0 6 0 5"></polygon>
+          <polygon points="6 5 6 6 5 6"></polygon>
+        </g>
+      }
     />
   );
 }
