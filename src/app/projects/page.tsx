@@ -10,6 +10,7 @@ export default function Projects() {
         className="bg-base-100 text-accent shadow-2xl w-60 h-screen fixed left-0 z-10"
         animations={[
           <ScrollVerticalAnimation
+            key={1}
             dur="2s"
             repeatCount="indefinite"
             direction="down"
@@ -21,6 +22,7 @@ export default function Projects() {
         className="xl:block hidden bg-base-100 text-accent shadow-2xl w-60 h-screen fixed right-0 z-10"
         animations={[
           <ScrollVerticalAnimation
+            key={1}
             dur="2s"
             repeatCount="indefinite"
             direction="up"
