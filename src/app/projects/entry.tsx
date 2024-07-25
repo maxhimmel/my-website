@@ -35,7 +35,7 @@ export function Entry({
         <time className="font-mono italic">{date}</time>
         <div className="text-lg font-black">{title}</div>
         <p className="drop-shadow-sm">{description}</p>
-        <div className="child-content grid mt-2">{children}</div>
+        <div className="child-content flex mt-2">{children}</div>
         <div className="mb-14" />
       </div>
       <hr className="hr-b" />
