@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect } from "react";
+import React, { useRef } from "react";
 
 export function CarouselButton({
   target,
@@ -11,10 +11,7 @@ export function CarouselButton({
   children?: React.ReactNode;
   className?: string;
 }) {
-  let parent: Element | null = null;
-  useEffect(() => {
-    parent = document.querySelector(".carousel");
-  }, []);
+  const buttonRef = useRef<HTMLButtonElement>(null);
 
   return (
     <div
@@ -24,15 +21,20 @@ export function CarouselButton({
     "
     >
       <button
+        ref={buttonRef}
         className={`${className} btn-square rounded-none self-center opacity-0`}
         onClick={() => {
-          if (!parent) return;
+          if (!buttonRef.current) return;
+
+          const carousel = buttonRef.current.ownerDocument.querySelector(
+            ".carousel"
+          ) as Element;
 
           const zeroIndex = target - 1;
-          const width = parent.clientWidth;
+          const width = carousel.clientWidth;
           const targetXPixel = width * zeroIndex;
 
-          parent?.scrollTo(targetXPixel, 0);
+          carousel.scrollTo(targetXPixel, 0);
         }}
       >
         {children}
