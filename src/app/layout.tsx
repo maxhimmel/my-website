@@ -32,7 +32,7 @@ export default function RootLayout({
 
         <BackgroundLayout />
 
-        <div className="mt-16">{children}</div>
+        {children}
       </body>
     </html>
   );
