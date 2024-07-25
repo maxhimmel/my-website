@@ -1,11 +1,12 @@
+import { PageContainer } from "../components/pageContainer";
+
 export default function Resume() {
   return (
-    <main className="h-screen">
-      {/* TODO: Change object > data > /resume.pdf into an incorrect link to simulate an error. */}
+    <PageContainer>
       <object data="/resume.pdf" type="application/pdf" className="size-full">
         <ErrorFallback />
       </object>
-    </main>
+    </PageContainer>
   );
 }
 
