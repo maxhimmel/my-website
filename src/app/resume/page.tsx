@@ -4,7 +4,7 @@ export default function Resume() {
   return (
     <PageContainer>
       {/* TODO: How do we handle error or loading? */}
-      <iframe src="/resume.pdf" title="Resume" className="size-full" />
+      <iframe src="/resume.pdf" title="Resume" className="flex-1" />
     </PageContainer>
   );
 }
