@@ -6,7 +6,7 @@ import { NavMenu } from "./navMenu";
 export function BackgroundLayout() {
   return (
     <div id="bg-layout">
-      <div className="shadow-2xl w-60 pt-16 h-screen fixed left-0 z-10">
+      <div className="shadow-2xl w-60 h-screen fixed left-0 z-10">
         <HideoutPattern
           className="absolute bg-base-100 text-accent size-full"
           animations={[
@@ -25,7 +25,7 @@ export function BackgroundLayout() {
 
       <ParkayFloorPattern className="bg-base-100 text-base-200 text-opacity-65 fixed h-screen w-screen" />
 
-      <div className="xl:block hidden shadow-2xl w-60 pt-16 h-screen fixed right-0 z-10">
+      <div className="xl:block hidden shadow-2xl w-60 h-screen fixed right-0 z-10">
         <HideoutPattern
           className="absolute bg-base-100 text-accent size-full"
           animations={[
