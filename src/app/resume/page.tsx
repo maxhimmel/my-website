@@ -3,10 +3,8 @@ import { PageContainer } from "../components/pageContainer";
 export default function Resume() {
   return (
     <PageContainer>
+      {/* TODO: How do we handle error or loading? */}
       <iframe src="/resume.pdf" title="Resume" className="size-full" />
-      {/* <object data="/resume.pdf" type="application/pdf" className="size-full">
-        <ErrorFallback />
-      </object> */}
     </PageContainer>
   );
 }
