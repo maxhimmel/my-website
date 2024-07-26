@@ -8,14 +8,14 @@ export function NavMenu() {
 
   function getActiveClass(path: string) {
     return path === pathname
-      ? "bg-secondary text-secondary-content focus:bg-secondary focus:text-secondary-content pointer-events-none"
+      ? "bg-accent text-accent-content focus:bg-accent focus:text-accent-content pointer-events-none drop-shadow-md"
       : "";
   }
 
   return (
     <div
-      className="
-        menu menu-lg bg-base-200 shadow-xl text-base-content rounded-box
+      className="menu menu-lg bg-base-200 shadow-xl text-base-content rounded-box
+        border-4 border-accent
         [&_a]:rounded-2xl
         "
     >
