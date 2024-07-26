@@ -1,6 +1,17 @@
+"use client";
+
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 export function NavMenu() {
+  const pathname = usePathname();
+
+  function getActiveClass(path: string) {
+    return path === pathname
+      ? "bg-secondary text-secondary-content focus:bg-secondary focus:text-secondary-content pointer-events-none"
+      : "";
+  }
+
   return (
     <div
       className="
@@ -9,7 +20,7 @@ export function NavMenu() {
         "
     >
       <li>
-        <Link href="/projects">
+        <Link className={getActiveClass("/projects")} href="/projects">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
@@ -26,7 +37,7 @@ export function NavMenu() {
         </Link>
       </li>
       <li>
-        <Link href="/resume">
+        <Link className={getActiveClass("/resume")} href="/resume">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
