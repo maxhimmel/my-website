@@ -1,3 +1,4 @@
+import { PageContainer } from "../components/pageContainer";
 import { ArchitectPattern } from "../svg/patterns/architect";
 import { AutumnPattern } from "../svg/patterns/autumn";
 import { AztecPattern } from "../svg/patterns/aztec";
@@ -48,8 +49,8 @@ import { Swatch } from "./swatch";
 
 export default function PatternsTest() {
   return (
-    <main>
-      <div className="grid grid-cols-4 gap-2 p-2 bg-accent">
+    <PageContainer>
+      <div className="grid grid-cols-4 gap-2 p-2 flex-1 bg-accent">
         <Swatch
           PatternElement={ArchitectPattern}
           patternClassName="bg-base-100 text-base-300 rounded-lg"
@@ -235,6 +236,6 @@ export default function PatternsTest() {
           patternClassName="bg-base-100 text-base-300 rounded-lg"
         />
       </div>
-    </main>
+    </PageContainer>
   );
 }
