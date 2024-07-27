@@ -45,7 +45,7 @@ export function ScrollHorizontalAnimation({
   repeatCount: string;
 }) {
   const { width } = usePatternSize();
-  const sign = direction === "left" ? "-" : "";
+  const sign = direction === "right" ? "-" : "";
 
   return (
     <animate
