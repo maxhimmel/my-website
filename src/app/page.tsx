@@ -40,18 +40,15 @@ export default function AboutMe() {
               <h2 className="card-title">Welcome!</h2>
 
               <p>
-                By some twist of fate, goodwill, or good luck you’ve stumbled
-                upon my portfolio! Here you can view my resumé and the games
-                I've published professionally. I’m currently looking for new
-                opportunities in game programming and web dev, so feel free to
-                reach out if you think I might be a good fit for your team. I'm
-                excited to hear from you!
+                {
+                  "By some twist of fate, goodwill, or good luck you’ve stumbled upon my portfolio! Here you can view my resumé and the games I've published professionally. I’m currently looking for new opportunities in game programming and web dev, so feel free to reach out if you think I might be a good fit for your team. I'm excited to hear from you!"
+                }
                 <br />
                 <br />
                 <i>
-                  I also want to add that I had a lot of fun building this site
-                  with Next.js, DaisyUI, Tailwind, and Hero Patterns. I hope you
-                  like it!
+                  {
+                    "I also want to add that I had a lot of fun building this site with Next.js, DaisyUI, Tailwind, and Hero Patterns. I hope you like it!"
+                  }
                 </i>
               </p>
               {/* <div className="card-actions justify-end">
