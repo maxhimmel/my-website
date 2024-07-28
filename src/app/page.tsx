@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { PageContainer } from "./components/pageContainer";
 import { ScrollVerticalAnimation } from "./svg/patterns/animations";
 import { TicTacToePattern } from "./svg/patterns/ticTacToe";
@@ -26,10 +27,14 @@ export default function AboutMe() {
                   ]}
                 />
               </div>
-              <img
-                src="/profile-pic.jpg"
-                className="absolute top-6 left-6 rounded-full size-44 border-4 border-primary"
-              />
+              <div className="absolute top-6 left-6 rounded-full size-44 border-4 border-primary">
+                <Image
+                  src="/profile-pic.jpg"
+                  alt="Profile Picture"
+                  fill
+                  className="rounded-full"
+                />
+              </div>
             </div>
             <div className="card-body">
               <h2 className="card-title">Welcome!</h2>
