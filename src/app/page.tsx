@@ -8,7 +8,7 @@ export default function AboutMe() {
     <PageContainer>
       <div className="hero items-start">
         <div className="hero-content">
-          <div className="card lg:card-side bg-base-100 shadow-xl p-8">
+          <div className="card lg:card-side bg-base-100 text-base-content shadow-xl p-8">
             <div className="relative">
               <div
                 className="relative mask mask-hexagon size-56
