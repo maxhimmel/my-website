@@ -1,5 +1,7 @@
 import type { Config } from "tailwindcss";
 
+export const themes = ["valentine", "dim", "dracula"];
+
 const config: Config = {
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
@@ -10,7 +12,7 @@ const config: Config = {
   plugins: [require("daisyui")],
 
   daisyui: {
-    themes: ["valentine", "dim"]
+    themes: themes,
   },
 
   theme: {
