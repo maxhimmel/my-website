@@ -1,6 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { BackgroundLayout } from "./components/backgroundLayout";
-import { Navbar } from "./components/navbar";
+import { NavbarWithDrawer } from "./components/navbarWithDrawer";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -20,9 +20,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <Navbar />
         <BackgroundLayout />
-        {children}
+        <NavbarWithDrawer>{children}</NavbarWithDrawer>
       </body>
     </html>
   );
