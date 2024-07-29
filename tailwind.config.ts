@@ -17,6 +17,10 @@ const config: Config = {
 
   theme: {
     extend: {
+      spacing: {
+        "navbar-h": "4.5rem",
+      },
+
       keyframes: {
         "spin-reverse": {
           "0%": {
