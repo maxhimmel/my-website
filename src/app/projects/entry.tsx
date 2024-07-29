@@ -31,12 +31,14 @@ export function Entry({
     >
       <hr className="hr-t" />
       <Icon className="bg-neutral text-neutral-content" />
-      <div className="timeline-entry bg-base-200 text-base-content shadow-lg rounded-lg p-4 m-4">
-        <time className="font-mono italic">{date}</time>
-        <div className="text-lg font-black">{title}</div>
-        <p className="drop-shadow-sm">{description}</p>
-        <div className="child-content flex mt-2">{children}</div>
-        <div className="mb-14" />
+      <div className="timeline-entry">
+        <div className="bg-base-200 text-base-content shadow-lg rounded-lg p-4">
+          <time className="font-mono italic">{date}</time>
+          <div className="text-lg font-black">{title}</div>
+          <p className="drop-shadow-sm">{description}</p>
+          <div className="child-content flex mt-2">{children}</div>
+        </div>
+        <div className="hr-b mt-12" />
       </div>
       <hr className="hr-b" />
     </li>
