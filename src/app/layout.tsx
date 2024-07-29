@@ -1,9 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { BackgroundLayout } from "./components/backgroundLayout";
-import { ThemeDropdown } from "./components/themeDropdown";
-import "./globals.css";
-import { PolkaDotsPattern } from "./svg/patterns/polkaDots";
 import { Navbar } from "./components/navbar";
+import "./globals.css";
 
 export const metadata: Metadata = {
   title: "Max Himmel",
