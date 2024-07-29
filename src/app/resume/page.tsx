@@ -1,11 +1,7 @@
-import { PageContainer } from "../components/pageContainer";
-
 export default function Resume() {
+  // TODO: How do we handle error or loading?
   return (
-    <PageContainer>
-      {/* TODO: How do we handle error or loading? */}
-      <iframe src="/resume.pdf" title="Resume" className="w-full h-screen" />
-    </PageContainer>
+    <iframe src="/resume.pdf" title="Resume" className="w-full h-screen" />
   );
 }
 
