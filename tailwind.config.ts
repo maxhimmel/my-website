@@ -1,6 +1,21 @@
 import type { Config } from "tailwindcss";
 
-export const themes = ["valentine", "dim", "dracula"];
+export const themes = [
+  "valentine",
+  "emerald",
+  "retro",
+  "cupcake",
+  "dracula",
+  "dim",
+  "corporate",
+  "fantasy",
+  // these are ugly
+  // "coffee",
+  // "pastel",
+  // "luxury",
+  // "aqua",
+  // "cmyk",
+];
 
 const config: Config = {
   content: [

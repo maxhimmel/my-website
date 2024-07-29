@@ -3,7 +3,7 @@ import { themes } from "../../../tailwind.config";
 export function ThemeDropdown({ className }: { className?: string }) {
   return (
     <details className={`dropdown ${className}`}>
-      <summary tabIndex={0} role="button" className="btn btn-primary m-1">
+      <summary tabIndex={0} role="button" className="btn btn-accent m-1">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
@@ -29,7 +29,7 @@ export function ThemeDropdown({ className }: { className?: string }) {
           <path d="M1799 349l242 241-1017 1017L7 590l242-241 775 775 775-775z"></path>
         </svg>
       </summary>
-      <ul className="dropdown-content bg-base-100 text-base-content rounded-box border-4 border-primary z-[1] w-auto p-2 shadow-2xl">
+      <ul className="dropdown-content bg-base-100 text-base-content rounded-box border-4 border-accent z-[1] w-auto p-2 shadow-2xl">
         {themes.map((theme) => (
           <li key={theme}>
             <input
