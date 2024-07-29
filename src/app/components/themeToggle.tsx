@@ -1,4 +1,4 @@
-export function ThemeController() {
+export function ThemeToggle() {
   const darkTheme = "dim";
 
   return (
