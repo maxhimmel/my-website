@@ -1,8 +1,8 @@
 import { themes } from "../../../tailwind.config";
 
-export function ThemeDropdown() {
+export function ThemeDropdown({ className }: { className?: string }) {
   return (
-    <details className="dropdown">
+    <details className={`dropdown ${className}`}>
       <summary tabIndex={0} role="button" className="btn btn-primary m-1">
         <svg
           xmlns="http://www.w3.org/2000/svg"
