@@ -14,9 +14,9 @@ export function NavMenu({ className }: { className?: string }) {
 
   return (
     <div
-      className={`${className} menu menu-lg bg-base-200 shadow-xl text-base-content rounded-box
+      className={`${className} menu bg-base-100 shadow-xl text-base-content rounded-box
         border-4 border-accent
-        [&_a]:rounded-2xl
+        [&_a]:rounded-lg
         `}
     >
       <li>
