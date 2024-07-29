@@ -18,7 +18,7 @@ const config: Config = {
   theme: {
     extend: {
       spacing: {
-        "navbar-h": "4.5rem",
+        "navbar-h": "5.5rem",
       },
 
       keyframes: {
