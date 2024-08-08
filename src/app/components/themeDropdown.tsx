@@ -1,9 +1,32 @@
+"use client";
+
+import { useRef } from "react";
 import { themes } from "../../../tailwind.config";
 
 export function ThemeDropdown({ className }: { className?: string }) {
+  const dropdownRef = useRef<HTMLDivElement>(null);
+
+  function toggleDropdown(target: HTMLElement | null) {
+    if (target && target.matches(":focus")) {
+      // Adding a timeout to give css time to update
+      setTimeout(() => {
+        target.blur();
+      }, 0);
+    }
+  }
+
   return (
-    <details className={`dropdown ${className} drop-shadow-lg`}>
-      <summary tabIndex={0} role="button" className="btn btn-accent m-1">
+    <div className={`dropdown ${className} drop-shadow-lg`}>
+      <div
+        ref={dropdownRef}
+        tabIndex={0}
+        role="button"
+        className="btn btn-accent m-1"
+        onMouseDown={() => {
+          const target = dropdownRef.current;
+          toggleDropdown(target);
+        }}
+      >
         <svg
           xmlns="http://www.w3.org/2000/svg"
           fill="none"
@@ -28,8 +51,12 @@ export function ThemeDropdown({ className }: { className?: string }) {
         >
           <path d="M1799 349l242 241-1017 1017L7 590l242-241 775 775 775-775z"></path>
         </svg>
-      </summary>
-      <ul className="dropdown-content bg-base-100 text-base-content rounded-box border-4 border-accent z-[1] w-auto p-2 shadow-2xl">
+      </div>
+
+      <ul
+        tabIndex={0}
+        className="dropdown-content bg-base-100 text-base-content rounded-box border-4 border-accent z-[1] w-auto mt-2 p-2 shadow-2xl"
+      >
         {themes.map((theme) => (
           <li key={theme}>
             <input
@@ -38,10 +65,11 @@ export function ThemeDropdown({ className }: { className?: string }) {
               className="theme-controller btn btn-sm btn-block btn-ghost justify-start"
               aria-label={theme.toUpperCase()}
               value={theme}
+              onClick={(e) => toggleDropdown(e.currentTarget)}
             />
           </li>
         ))}
       </ul>
-    </details>
+    </div>
   );
 }
