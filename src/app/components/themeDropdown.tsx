@@ -2,7 +2,7 @@ import { themes } from "../../../tailwind.config";
 
 export function ThemeDropdown({ className }: { className?: string }) {
   return (
-    <details className={`dropdown ${className}`}>
+    <details className={`dropdown ${className} drop-shadow-lg`}>
       <summary tabIndex={0} role="button" className="btn btn-accent m-1">
         <svg
           xmlns="http://www.w3.org/2000/svg"
