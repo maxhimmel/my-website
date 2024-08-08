@@ -3,7 +3,13 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-export function NavMenu({ className }: { className?: string }) {
+export function NavMenu({
+  className,
+  onLinkClicked,
+}: {
+  className?: string;
+  onLinkClicked?: () => void;
+}) {
   const pathname = usePathname();
 
   function getActiveClass(path: string) {
@@ -20,7 +26,7 @@ export function NavMenu({ className }: { className?: string }) {
         `}
     >
       <li>
-        <Link className={getActiveClass("/")} href="/">
+        <Link className={getActiveClass("/")} href="/" onClick={onLinkClicked}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
@@ -33,7 +39,11 @@ export function NavMenu({ className }: { className?: string }) {
         </Link>
       </li>
       <li>
-        <Link className={getActiveClass("/projects")} href="/projects">
+        <Link
+          className={getActiveClass("/projects")}
+          href="/projects"
+          onClick={onLinkClicked}
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"
@@ -50,7 +60,11 @@ export function NavMenu({ className }: { className?: string }) {
         </Link>
       </li>
       <li>
-        <Link className={getActiveClass("/resume")} href="/resume">
+        <Link
+          className={getActiveClass("/resume")}
+          href="/resume"
+          onClick={onLinkClicked}
+        >
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 24 24"

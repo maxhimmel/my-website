@@ -1,3 +1,6 @@
+"use client";
+
+import { useState } from "react";
 import { ScrollVerticalAnimation } from "../svg/patterns/animations";
 import { HideoutPattern } from "../svg/patterns/hideout";
 import { PolkaDotsPattern } from "../svg/patterns/polkaDots";
@@ -5,9 +8,21 @@ import { NavMenu } from "./navMenu";
 import { ThemeDropdown } from "./themeDropdown";
 
 export function NavbarWithDrawer({ children }: { children?: React.ReactNode }) {
+  const [isSidebarOpen, setIsSidebarOpen] = useState(false);
+
+  function toggleSidebar() {
+    setIsSidebarOpen(!isSidebarOpen);
+  }
+
   return (
     <div className="drawer">
-      <input id="main-navbar" type="checkbox" className="drawer-toggle" />
+      <input
+        id="main-navbar"
+        type="checkbox"
+        className="drawer-toggle"
+        checked={isSidebarOpen}
+        onChange={toggleSidebar}
+      />
       <div className="drawer-content flex flex-col">
         {/* Navbar */}
         <div className="navbar relative h-navbar-h z-50 w-full bg-neutral text-neutral-content shadow-xl border-b-4 border-neutral-content">
@@ -66,7 +81,7 @@ export function NavbarWithDrawer({ children }: { children?: React.ReactNode }) {
           />
 
           <div className="z-10 space-y-2 pt-4">
-            <NavMenu className="menu-lg" />
+            <NavMenu className="menu-lg" onLinkClicked={toggleSidebar} />
             <ThemeDropdown className="dropdown-right" />
           </div>
         </ul>
