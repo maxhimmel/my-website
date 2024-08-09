@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { themeChange } from "theme-change";
+import { themes } from "../../../tailwind.config";
 
 export const useTheme = () => {
   const [theme, setTheme] = useState("");
@@ -13,5 +14,5 @@ export const useTheme = () => {
 };
 
 function getStoredTheme() {
-  return localStorage.getItem("theme") || "";
+  return localStorage.getItem("theme") || themes[0];
 }
