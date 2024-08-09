@@ -2,18 +2,11 @@
 
 import { useRef } from "react";
 import { themes } from "../../../tailwind.config";
+import { useTheme } from "../hooks/themeHook";
 
 export function ThemeDropdown({ className }: { className?: string }) {
   const dropdownRef = useRef<HTMLDivElement>(null);
-
-  function toggleDropdown(target: HTMLElement | null) {
-    if (target && target.matches(":focus")) {
-      // Adding a timeout to give css time to update
-      setTimeout(() => {
-        target.blur();
-      }, 0);
-    }
-  }
+  const [currentTheme, setCurrentTheme] = useTheme();
 
   return (
     <div className={`dropdown ${className} drop-shadow-lg`}>
@@ -61,15 +54,28 @@ export function ThemeDropdown({ className }: { className?: string }) {
           <li key={theme}>
             <input
               type="radio"
-              name="theme-dropdown"
-              className="theme-controller btn btn-sm btn-block btn-ghost justify-start"
+              name="theme"
+              className={`btn btn-sm btn-block justify-start ${
+                theme === currentTheme ? "btn-primary" : "btn-ghost"
+              }`}
               aria-label={theme.toUpperCase()}
               value={theme}
+              data-set-theme={theme}
               onClick={(e) => toggleDropdown(e.currentTarget)}
+              onChange={() => setCurrentTheme(theme)}
             />
           </li>
         ))}
       </ul>
     </div>
   );
+}
+
+function toggleDropdown(target: HTMLElement | null) {
+  if (target && target.matches(":focus")) {
+    // Adding a timeout to give css time to update
+    setTimeout(() => {
+      target.blur();
+    }, 0);
+  }
 }
