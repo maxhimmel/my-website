@@ -52,7 +52,11 @@ export function NavbarWithDrawer({ children }: { children?: React.ReactNode }) {
           <div className="hidden flex-none xl:block">
             <ul className="menu menu-horizontal items-center gap-4">
               {/* Navbar menu content here */}
-              <NavMenu className="menu-horizontal menu-sm" />
+              <NavMenu className="menu-horizontal menu-sm">
+                <NavMenu.AboutMe />
+                <NavMenu.Projects />
+                <NavMenu.Resume />
+              </NavMenu>
               <ThemeDropdown className="dropdown-end" />
             </ul>
           </div>
@@ -81,7 +85,11 @@ export function NavbarWithDrawer({ children }: { children?: React.ReactNode }) {
           />
 
           <div className="z-10 space-y-2 pt-4">
-            <NavMenu className="menu-lg" onLinkClicked={toggleSidebar} />
+            <NavMenu className="menu-lg">
+              <NavMenu.AboutMe onClick={toggleSidebar} />
+              <NavMenu.Projects onClick={toggleSidebar} />
+              <NavMenu.Resume onClick={toggleSidebar} />
+            </NavMenu>
             <ThemeDropdown className="dropdown-right" />
           </div>
         </ul>

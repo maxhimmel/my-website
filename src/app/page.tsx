@@ -1,6 +1,9 @@
+"use client";
+
 import Image from "next/image";
 import { ScrollVerticalAnimation } from "./svg/patterns/animations";
 import { TicTacToePattern } from "./svg/patterns/ticTacToe";
+import { NavMenu } from "@/app/components/navMenu";
 
 export default function AboutMe() {
   return (
@@ -49,9 +52,13 @@ export default function AboutMe() {
                 }
               </i>
             </p>
-            {/* <div className="card-actions justify-end">
-                <NavMenu className="xl:menu-horizontal" />
-              </div> */}
+            <br />
+            <div className="card-actions lg:justify-end xl:hidden">
+              <NavMenu className="menu-horizontal">
+                <NavMenu.Projects />
+                <NavMenu.Resume />
+              </NavMenu>
+            </div>
           </div>
         </div>
       </div>
