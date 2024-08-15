@@ -68,7 +68,9 @@ export function NavbarWithDrawer({ children }: { children?: React.ReactNode }) {
         <label
           htmlFor="main-navbar"
           aria-label="close sidebar"
-          className="drawer-overlay"
+          className={`drawer-overlay ${
+            isSidebarOpen ? "backdrop-blur-sm" : ""
+          }`}
         ></label>
         <ul className="menu min-h-screen w-80 p-4 pt-navbar-h">
           {/* Sidebar content here */}
