@@ -25,7 +25,7 @@ export function NavbarWithDrawer({ children }: { children?: React.ReactNode }) {
       />
       <div className="drawer-content flex flex-col">
         {/* Navbar */}
-        <div className="navbar relative h-navbar-h z-50 w-full bg-neutral text-neutral-content shadow-xl border-b-4 border-neutral-content">
+        <div className="navbar relative h-navbar-h z-50 w-full bg-neutral text-neutral-content shadow-xl border-b-4 border-accent">
           <PolkaDotsPattern className="bg-neutral text-neutral-content opacity-10 absolute inset-0 size-full -z-10" />
           <div className="flex-none xl:hidden">
             <label
