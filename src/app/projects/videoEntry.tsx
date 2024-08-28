@@ -14,7 +14,7 @@ function VideoRoot({
   return (
     <div
       ref={containerRef}
-      className={`${className}
+      className={`${className} w-4/5 md:w-3/5 lg:w-1/2 xl:w-11/12
             [&_iframe]:border-primary
             [&_iframe]:border-8
             [&_iframe]:rounded-2xl
@@ -25,22 +25,10 @@ function VideoRoot({
   );
 }
 
-function Video({
-  src,
-  className,
-  videoWidth,
-  videoHeight,
-}: {
-  src: string;
-  className?: string;
-  videoWidth: number;
-  videoHeight: number;
-}) {
+function Video({ src, className }: { src: string; className?: string }) {
   return (
     <iframe
-      className={className}
-      width={videoWidth}
-      height={videoHeight}
+      className={`${className} w-full h-60 lg:h-72 xl:h-80`}
       src={src}
       title="YouTube video player"
       allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
