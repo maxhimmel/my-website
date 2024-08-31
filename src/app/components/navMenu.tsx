@@ -28,7 +28,7 @@ function AboutMe({ onClick }: { onClick?: () => void }) {
   const className = useActiveLinkStyle("/");
 
   return (
-    <li>
+    <li className="flex-grow">
       <Link className={className} href="/" onClick={onClick}>
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -48,7 +48,7 @@ function Projects({ onClick }: { onClick?: () => void }) {
   const className = useActiveLinkStyle("/projects");
 
   return (
-    <li>
+    <li className="flex-grow">
       <Link className={className} href="/projects" onClick={onClick}>
         <svg
           xmlns="http://www.w3.org/2000/svg"
@@ -72,7 +72,7 @@ function Resume({ onClick }: { onClick?: () => void }) {
   const className = useActiveLinkStyle("/resume");
 
   return (
-    <li>
+    <li className="flex-grow">
       <Link className={className} href="/resume" onClick={onClick}>
         <svg
           xmlns="http://www.w3.org/2000/svg"
