@@ -1,8 +1,9 @@
 import type { Config } from "tailwindcss";
 
 export const themes = [
-  "valentine",
   "emerald",
+  "dark",
+  "valentine",
   "retro",
   "cupcake",
   "dracula",
@@ -44,9 +45,9 @@ const config: Config = {
           "100%": {
             transform: "rotate(-360deg)",
           },
-        }
+        },
       },
     },
-  }
+  },
 };
 export default config;
