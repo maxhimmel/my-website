@@ -1,7 +1,7 @@
 "use client";
 
 import { useRef } from "react";
-import { themes } from "../../../tailwind.config";
+import themes from "../../app/themes";
 import { useTheme } from "../hooks/themeHook";
 
 export function ThemeDropdown({ className }: { className?: string }) {
@@ -48,7 +48,7 @@ export function ThemeDropdown({ className }: { className?: string }) {
 
       <ul
         tabIndex={0}
-        className="dropdown-content bg-base-100 text-base-content rounded-box border-4 border-accent z-[1] w-auto mt-2 p-2 shadow-2xl"
+        className="dropdown-content bg-base-100 text-base-content rounded-box border-4 border-accent z-1 w-auto mt-2 p-2 shadow-2xl"
       >
         {themes.map((theme) => (
           <li key={theme}>

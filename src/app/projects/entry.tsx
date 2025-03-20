@@ -19,13 +19,13 @@ export function Entry({
         [&_.timeline-entry]:even:timeline-end
         
         [&_.timeline-entry]:text-start
-        [&_.timeline-entry]:odd:xl:text-end
+        xl:odd:[&_.timeline-entry]:text-end
         
-        [&_.child-content]:odd:xl:justify-end        
-        [&_.tech-logo]:odd:xl:order-last
+        xl:odd:[&_.child-content]:justify-end        
+        xl:odd:[&_.tech-logo]:order-last
         
-        [&_.hr-t]:first:hidden
-        [&_.hr-b]:last:hidden
+        first:[&_.hr-t]:hidden
+        last:[&_.hr-b]:hidden
         "
     >
       <hr className="hr-t" />
@@ -39,7 +39,7 @@ export function Entry({
             </div>
             <div className="text-lg font-black">{title}</div>
           </div>
-          <p className="drop-shadow-sm">{description}</p>
+          <p className="drop-shadow-xs">{description}</p>
           <div className="child-content flex mt-2">{children}</div>
         </div>
         <div className="hr-b mt-12" />

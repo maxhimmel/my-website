@@ -54,7 +54,7 @@ function CarouselItem({
   return (
     <div
       id={id}
-      className="carousel-item w-full relative [&_.btn]:hover:opacity-100"
+      className="carousel-item w-full relative hover:[&_.btn]:opacity-100"
     >
       {children}
       <CarouselButton

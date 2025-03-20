@@ -16,8 +16,8 @@ export function CarouselButton({
   return (
     <div
       className="h-full absolute even:left-0 odd:right-0 grid 
-        [&_.btn]:even:rounded-r-full
-        [&_.btn]:odd:rounded-l-full
+        even:[&_.btn]:rounded-r-full
+        odd:[&_.btn]:rounded-l-full
     "
     >
       <button
