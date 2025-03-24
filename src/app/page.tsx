@@ -1,3 +1,7 @@
-export default function Page() {
-  return <>howdy world</>;
+export default function Home() {
+  return (
+    <>
+      <div className="h-dvh grow"></div>
+    </>
+  );
 }
