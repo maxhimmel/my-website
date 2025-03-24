@@ -38,10 +38,16 @@ function NavLinks() {
   return (
     <>
       <li>
-        <a>Navbar Item 1</a>
+        <a>Work</a>
       </li>
       <li>
-        <a>Navbar Item 2</a>
+        <a>About</a>
+      </li>
+      <li>
+        <a>Resume</a>
+      </li>
+      <li>
+        <a>Contact</a>
       </li>
     </>
   );
