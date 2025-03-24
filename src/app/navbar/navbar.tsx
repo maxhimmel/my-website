@@ -38,7 +38,7 @@ function NavLinks() {
   return (
     <>
       <li>
-        <a href="#portfolio">Work</a>
+        <a href="#portfolio">Portfolio</a>
       </li>
       <li>
         <a href="#about">About</a>

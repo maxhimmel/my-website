@@ -14,7 +14,7 @@ export default function Footer() {
             className="absolute bottom-0.5"
           />
         </div>
-        <p>Created by Max Himmel using Next.js & DaisyUI</p>
+        <i>Created by Max Himmel using Next.js & DaisyUI</i>
       </aside>
       <nav className="grid-flow-col gap-4 md:place-self-center md:justify-self-end">
         <a href="https://github.com/maxhimmel" className="btn btn-square" target="_blank">
