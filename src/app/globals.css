@@ -1,11 +1,5 @@
 @import "tailwindcss";
-@plugin "daisyui" {
-  /**
-   * Note: If you make changes to this file, ensure you also update the corresponding settings
-   * in the `themes.ts` file located in the `src/app` directory to maintain consistency across the application.
-   */
-  themes: emerald --default, dark, valentine, retro, cupcake, dracula --prefersdark, dim, corporate, fantasy;
-}
+@plugin "daisyui";
 
 @theme {
   --spacing-navbar-h: 5.5rem;
