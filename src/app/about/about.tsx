@@ -32,7 +32,7 @@ export function AboutMe() {
           <div className="flex flex-wrap gap-12 justify-between">
             {/* <p className="text-4xl text-secondary">🛹 · 🕺 · 🎨 · 🪩 · 📚</p> */}
             <div className="flex gap-2">
-              <a href="mailto:himmelmax@gmail.com" className="btn btn-primary">
+              <a href="mailto:himmelmax@gmail.com" className="btn btn-primary" target="_blank">
                 Email <RiMailSendLine />
               </a>
               <a href="/resume.pdf" download="resume" className="btn btn-secondary">
