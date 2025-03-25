@@ -1,3 +1,4 @@
+import { ReactNode } from "react";
 import {
   SiDrizzle,
   SiExpress,
@@ -13,8 +14,8 @@ import {
   SiTrpc,
   SiTypescript,
 } from "react-icons/si";
+import { TbStackMiddle } from "react-icons/tb";
 import { AnchorScrollOffset } from "../lib/anchorScrollOffset";
-import { ReactNode } from "react";
 
 export function SkillsBanner() {
   return (
@@ -42,6 +43,7 @@ function Skills() {
       <Skill name="MongoDB" icon={<SiMongodb className="size-8" />} />
       <Skill name="Tailwind" icon={<SiTailwindcss className="size-8" />} />
       <Skill name="HTML" icon={<SiHtml5 className="size-8" />} />
+      <Skill name="Full Stack" icon={<TbStackMiddle className="size-8" />} />
     </div>
   );
 }
