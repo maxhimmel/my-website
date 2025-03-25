@@ -1,18 +1,12 @@
 import { AboutMe } from "./about/about";
-import { ScrollVerticalAnimation } from "./patterns/svg/animations";
-import { TicTacToePattern } from "./patterns/svg/ticTacToe";
+import { HeroBanner } from "./heroBanner/heroBanner";
 import { Portfolio } from "./portfolio/portfolio";
 import { SkillsBanner } from "./skills/skills";
 
 export default function Home() {
   return (
     <>
-      <div className="w-full h-72">
-        <TicTacToePattern
-          className="bg-base-300 text-primary size-full"
-          animations={[<ScrollVerticalAnimation key={1} direction="up" dur="6s" repeatCount="indefinite" />]}
-        />
-      </div>
+      <HeroBanner />
       <SkillsBanner />
       <Portfolio />
       <AboutMe />
