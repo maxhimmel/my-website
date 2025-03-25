@@ -1,8 +1,7 @@
 import type { Metadata, Viewport } from "next";
-import { BackgroundLayout } from "./components/backgroundLayout";
-import { NavbarWithDrawer } from "./components/navbarWithDrawer";
 import "./globals.css";
-import { PageContainer } from "./components/pageContainer";
+import Navbar from "./navbar/navbar";
+import Footer from "./footer/footer";
 
 export const metadata: Metadata = {
   title: "Max Himmel",
@@ -21,10 +20,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <BackgroundLayout />
-        <NavbarWithDrawer>
-          <PageContainer>{children}</PageContainer>
-        </NavbarWithDrawer>
+        <Navbar>
+          {children}
+          <Footer />
+        </Navbar>
       </body>
     </html>
   );
