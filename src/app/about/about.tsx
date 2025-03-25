@@ -14,6 +14,7 @@ export function AboutMe() {
               alt="Picture of Max Himmel"
               width={433}
               height={433}
+              priority
               className="max-w-sm shadow-2xl animate-[spin-reverse_30s_linear_infinite]"
             />
           </div>
