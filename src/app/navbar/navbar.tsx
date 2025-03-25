@@ -7,7 +7,7 @@ export default function Navbar({ children }: PropsWithChildren) {
       <input id="my-drawer-3" type="checkbox" className="drawer-toggle" />
       <div className="drawer-content flex flex-col">
         {/* Navbar */}
-        <div className="navbar bg-base-300 w-full h-16 sticky top-0 z-10 border-b-8 border-primary">
+        <div className="navbar bg-base-300 w-full h-16 sticky top-0 z-10 border-b-8 border-primary shadow-xl shadow-neutral">
           <div className="flex-none lg:hidden">
             <label htmlFor="my-drawer-3" aria-label="open sidebar" className="btn btn-square btn-ghost">
               <RiMenuFill className="size-6" />
