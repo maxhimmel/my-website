@@ -10,7 +10,7 @@ export default function Home() {
       <div className="w-full h-72">
         <TicTacToePattern
           className="bg-base-300 text-primary size-full"
-          animations={[<ScrollVerticalAnimation key={1} direction="up" dur="3s" repeatCount="indefinite" />]}
+          animations={[<ScrollVerticalAnimation key={1} direction="up" dur="6s" repeatCount="indefinite" />]}
         />
       </div>
       <SkillsBanner />
