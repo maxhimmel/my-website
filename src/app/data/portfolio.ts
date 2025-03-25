@@ -10,7 +10,7 @@ export const PROJECTS: Project[] = [
   {
     name: "Scratch Notes",
     desc: "",
-    sourceLink: "https://github.com/maxhimmel/dj-notes-2", // TODO: Setup github README
+    sourceLink: "https://github.com/maxhimmel/dj-notes-2",
     referenceLink: "https://dj-notes-2.onrender.com/",
     img: "https://i.imgur.com/gezKdM7.png",
   },
