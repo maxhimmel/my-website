@@ -6,7 +6,7 @@ export function AboutMe() {
   return (
     <div className="hero bg-base-200 relative">
       <AnchorScrollOffset id="about" />
-      <div className="hero-content flex-col lg:flex-row">
+      <div className="hero-content flex-col lg:flex-row overflow-clip">
         <div className="mask mask-hexagon bg-primary p-2 animate-[spin_30s_linear_infinite]">
           <div className="mask mask-hexagon ">
             <Image
@@ -15,7 +15,7 @@ export function AboutMe() {
               width={433}
               height={433}
               priority
-              className="max-w-sm shadow-2xl animate-[spin-reverse_30s_linear_infinite]"
+              className="lg:max-w-sm shadow-2xl animate-[spin-reverse_30s_linear_infinite]"
             />
           </div>
         </div>
