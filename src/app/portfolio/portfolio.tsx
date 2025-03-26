@@ -34,8 +34,8 @@ function Work({ project }: { project: Project }) {
       </figure>
       <div className="card-body">
         <h2 className="card-title">{project.name}</h2>
-        <i>{project.desc}</i>
-        <div className="card-actions justify-end mt-4">
+        <i className="mb-4">{project.desc}</i>
+        <div className="card-actions justify-end mt-auto">
           <a href={project.referenceLink} className="btn btn-accent" target="_blank">
             Launch <RiExternalLinkFill className="size-5/12" />
           </a>
