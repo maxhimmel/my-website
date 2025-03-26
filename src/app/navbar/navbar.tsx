@@ -1,32 +1,28 @@
-import { PropsWithChildren } from "react";
+import Link from "next/link";
 import { RiMenuFill } from "react-icons/ri";
+import { DropdownLink } from "../lib/dropdownLink";
 
-export default function Navbar({ children }: PropsWithChildren) {
+export function Navbar() {
   return (
-    <div className="drawer">
-      <input id="my-drawer-3" type="checkbox" className="drawer-toggle" />
-      <div className="drawer-content flex flex-col">
-        {/* Navbar */}
-        <div className="navbar bg-base-300 w-full h-16 sticky top-0 z-10 border-b-8 border-primary shadow-xl shadow-neutral">
-          <div className="flex-none lg:hidden">
-            <label htmlFor="my-drawer-3" aria-label="open sidebar" className="btn btn-square btn-ghost">
-              <RiMenuFill className="size-6" />
-            </label>
+    <div className="navbar bg-base-300 sticky top-0 z-10 border-b-8 border-primary shadow-xl shadow-neutral">
+      <div className="navbar-start">
+        <div className="dropdown">
+          <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
+            <RiMenuFill className="size-6" />
           </div>
-          <div className="mx-2 flex-1 px-2 font-black text-3xl">Max Himmel</div>
-          <div className="hidden flex-none lg:block">
-            <ul className="menu menu-horizontal">
-              {/* Navbar menu content here */}
-              <NavLinks />
-            </ul>
-          </div>
+          <ul
+            tabIndex={0}
+            className="menu menu-md dropdown-content bg-base-100 rounded-box rounded-t-none z-1 mt-2 ml-4 w-3xs p-2 shadow-lg shadow-neutral border-2 border-base-300"
+          >
+            <NavLinks />
+          </ul>
         </div>
-        {children}
+        <Link href="/" className="btn btn-ghost font-black text-3xl">
+          Max Himmel
+        </Link>
       </div>
-      <div className="drawer-side z-20">
-        <label htmlFor="my-drawer-3" aria-label="close sidebar" className="drawer-overlay"></label>
-        <ul className="menu bg-base-200 min-h-full w-80 p-4">
-          {/* Sidebar content here */}
+      <div className="navbar-end hidden lg:flex">
+        <ul className="menu menu-horizontal px-1">
           <NavLinks />
         </ul>
       </div>
@@ -38,16 +34,16 @@ function NavLinks() {
   return (
     <>
       <li>
-        <a href="#portfolio">Portfolio</a>
+        <DropdownLink href="/#portfolio">Portfolio</DropdownLink>
       </li>
       <li>
-        <a href="#about">About</a>
+        <DropdownLink href="/#about">About</DropdownLink>
       </li>
       <li>
-        <a href="#about">Resume</a>
+        <DropdownLink href="/resume">Resume</DropdownLink>
       </li>
       <li>
-        <a href="#about">Contact</a>
+        <DropdownLink href="/#about">Contact</DropdownLink>
       </li>
     </>
   );

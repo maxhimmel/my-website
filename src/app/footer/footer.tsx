@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { SiGithub, SiLinkedin } from "react-icons/si";
 
-export default function Footer() {
+export function Footer() {
   return (
     <footer className="footer sm:footer-horizontal bg-neutral text-neutral-content items-center p-4">
       <aside className="grid-flow-col items-center">
