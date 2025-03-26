@@ -9,7 +9,7 @@ const ANIMATION = {
 
 export function HeroBanner() {
   return (
-    <div className="w-full h-72">
+    <div className="w-full h-56">
       <TicTacToePattern
         className="bg-base-300 text-primary size-full"
         animations={[
