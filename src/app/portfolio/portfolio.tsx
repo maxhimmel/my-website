@@ -35,15 +35,20 @@ function Work({ project }: { project: Project }) {
       <div className="card-body relative">
         <div className="flex justify-between">
           <h2 className="card-title">{project.name}</h2>
-          <div className="absolute bottom-0 right-0 flex items-center gap-1 bg-neutral rounded-xl rounded-e-none p-2 pb-3">
-            {project.techStack.map((tech) => (
-              <img
-                key={tech}
-                alt={tech}
-                className="size-5"
-                src={`https://cdn.simpleicons.org/${tech}/white`}
-              />
-            ))}
+          <div
+            className="tooltip absolute bottom-0 right-0"
+            data-tip={project.techStack.map((tech) => tech.toLocaleUpperCase()).join(" · ")}
+          >
+            <div className="flex items-center gap-1 bg-neutral rounded-xl rounded-e-none p-2 pb-3">
+              {project.techStack.map((tech) => (
+                <img
+                  key={tech}
+                  alt={tech}
+                  className="size-5"
+                  src={`https://cdn.simpleicons.org/${tech}/white`}
+                />
+              ))}
+            </div>
           </div>
         </div>
         <i className="mb-4">{project.desc}</i>
