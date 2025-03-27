@@ -4,6 +4,7 @@ export type Project = {
   sourceLink?: string;
   referenceLink?: string;
   img: string;
+  techStack: string[];
 };
 
 export const PROJECTS: Project[] = [
@@ -13,6 +14,7 @@ export const PROJECTS: Project[] = [
     sourceLink: "https://github.com/maxhimmel/dj-notes-2",
     referenceLink: "https://dj-notes-2.onrender.com/",
     img: "https://i.imgur.com/gezKdM7.png",
+    techStack: ["nx", "trpc", "prisma"],
   },
   {
     name: "FEASTMODE",
@@ -20,6 +22,7 @@ export const PROJECTS: Project[] = [
     sourceLink: "https://github.com/maxhimmel/feastmode/",
     referenceLink: "https://feastmode-c7c27bc8f641.herokuapp.com/",
     img: "https://raw.githubusercontent.com/maxhimmel/feastmode/refs/heads/main/main_app/static/images/banner.png",
+    techStack: ["python", "django", "postgresql"],
   },
   {
     name: "Minesweeper",
@@ -27,6 +30,7 @@ export const PROJECTS: Project[] = [
     sourceLink: "https://github.com/maxhimmel/minesweeper/",
     referenceLink: "https://maxhimmel.github.io/minesweeper",
     img: "https://i.imgur.com/pyPryv7.gif",
+    techStack: ["javascript", "html5", "css"],
   },
   {
     name: "Intellipet Adventures",
@@ -35,6 +39,7 @@ export const PROJECTS: Project[] = [
     referenceLink:
       "https://support.adventureacademy.com/hc/en-us/articles/9378048411031-What-is-Intellipet-Adventures",
     img: "https://i.imgur.com/YgNOxDX.png",
+    techStack: ["docker", "unity"],
   },
   {
     name: "Adventure Academy",
@@ -42,6 +47,7 @@ export const PROJECTS: Project[] = [
     // sourceLink: undefined,
     referenceLink: "https://www.adventureacademy.com/",
     img: "https://i.imgur.com/J9rbtSf.jpeg",
+    techStack: ["docker", "unity"],
   },
   {
     name: "Marble Knights",
@@ -49,6 +55,7 @@ export const PROJECTS: Project[] = [
     // sourceLink: undefined,
     referenceLink: "https://www.youtube.com/watch?v=Ztq1wiz-jzk",
     img: "https://i.imgur.com/8i7umFS.jpeg",
+    techStack: ["unity"],
   },
   {
     name: "Cinemoi World",
@@ -56,6 +63,7 @@ export const PROJECTS: Project[] = [
     // sourceLink: undefined,
     referenceLink: "https://www.youtube.com/watch?v=xlH43SNRwbE",
     img: "https://i.imgur.com/8Zunng0.png",
+    techStack: ["unity"],
   },
   {
     name: "Wizards: Wand of Epicosity",
@@ -63,6 +71,7 @@ export const PROJECTS: Project[] = [
     // sourceLink: undefined,
     referenceLink: "https://store.steampowered.com/app/772750/Wizards_Wand_of_Epicosity/",
     img: "https://i.imgur.com/BGPegqS.jpeg",
+    techStack: ["unity"],
   },
   {
     name: "Deer Hunter: Reloaded",
@@ -70,5 +79,6 @@ export const PROJECTS: Project[] = [
     // sourceLink: undefined,
     referenceLink: "https://store.steampowered.com/app/361370/Deer_Hunter_Reloaded/",
     img: "https://i.imgur.com/imuQMPG.jpeg",
+    techStack: ["unity"],
   },
 ];
