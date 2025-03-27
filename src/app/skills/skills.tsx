@@ -1,6 +1,5 @@
 import { ReactNode } from "react";
 import {
-  SiDrizzle,
   SiExpress,
   SiGit,
   SiHtml5,
@@ -9,6 +8,7 @@ import {
   SiNextdotjs,
   SiNodedotjs,
   SiPostgresql,
+  SiPrisma,
   SiReact,
   SiTailwindcss,
   SiTrpc,
@@ -29,7 +29,7 @@ export function SkillsBanner() {
 
 function Skills() {
   return (
-    <div className="stats overflow-x-clip shadow animate-[scroll-left_40s_linear_infinite]">
+    <div className="stats overflow-x-clip shadow animate-[scroll-left_80s_linear_infinite]">
       <Skill name="TypeScript" icon={<SiTypescript className="size-8" />} />
       <Skill name="JavaScript" icon={<SiJavascript className="size-8" />} />
       <Skill name="Next.js" icon={<SiNextdotjs className="size-8" />} />
@@ -38,7 +38,7 @@ function Skills() {
       <Skill name="Git" icon={<SiGit className="size-8" />} />
       <Skill name="tRPC" icon={<SiTrpc className="size-8" />} />
       <Skill name="Express" icon={<SiExpress className="size-8" />} />
-      <Skill name="Drizzle" icon={<SiDrizzle className="size-8" />} />
+      <Skill name="Prisma" icon={<SiPrisma className="size-8" />} />
       <Skill name="PostgreSQL" icon={<SiPostgresql className="size-8" />} />
       <Skill name="MongoDB" icon={<SiMongodb className="size-8" />} />
       <Skill name="Tailwind" icon={<SiTailwindcss className="size-8" />} />
