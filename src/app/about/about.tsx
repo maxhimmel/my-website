@@ -36,7 +36,7 @@ export function AboutMe() {
               <a href="mailto:himmelmax@gmail.com" className="btn btn-primary" target="_blank">
                 Email <RiMailSendLine />
               </a>
-              <a href="/resume.pdf" download="resume" className="btn btn-secondary">
+              <a href="/resume.pdf" download="Max Himmel - Resume" className="btn btn-secondary">
                 Resume <RiDownloadFill />
               </a>
             </div>
