@@ -6,10 +6,10 @@ import { SkillsBanner } from "./skills/skills";
 export default function Home() {
   return (
     <>
-      <HeroBanner />
-      <SkillsBanner />
-      <Portfolio />
       <AboutMe />
+      <SkillsBanner />
+      <HeroBanner />
+      <Portfolio />
     </>
   );
 }
