@@ -22,7 +22,7 @@ export function Portfolio() {
 function Work({ project }: { project: Project }) {
   return (
     <div className="card bg-base-300 w-96 shadow-sm border-4 border-neutral">
-      <figure className="h-[192px] bg-neutral">
+      <figure className="h-[192px] bg-neutral rounded-none">
         <Image
           src={project.img}
           alt={project.name}
