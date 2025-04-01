@@ -13,7 +13,7 @@ export function Navbar() {
           </div>
           <ul
             tabIndex={0}
-            className="menu menu-md dropdown-content bg-base-100 rounded-box rounded-t-none z-1 mt-2 ml-4 w-3xs p-2 shadow-lg shadow-neutral border-2 border-base-300"
+            className="menu menu-md dropdown-content absolute top-full mt-4 -left-2 w-dvw bg-transparent backdrop-blur-3xl rounded-box rounded-t-none z-1 p-2 shadow-lg shadow-neutral border-2 border-primary"
           >
             <NavLinks />
           </ul>
