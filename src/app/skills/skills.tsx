@@ -19,7 +19,7 @@ import { AnchorScrollOffset } from "../lib/anchorScrollOffset";
 
 export function SkillsBanner() {
   return (
-    <div className="flex w-full bg-base-200 overflow-x-clip border-t-2 border-primary shadow-xl shadow-neutral">
+    <div className="flex w-full bg-base-200 overflow-x-clip border-t-2 border-primary shadow-xl dark:shadow-neutral">
       <AnchorScrollOffset id="skills" />
       <Skills />
       <Skills />
