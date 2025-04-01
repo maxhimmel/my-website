@@ -2,6 +2,7 @@ import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import { Navbar } from "./navbar/navbar";
 import { Footer } from "./footer/footer";
+import { ThemeProvider } from "next-themes";
 
 export const metadata: Metadata = {
   title: "Max Himmel",
@@ -18,11 +19,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body>
-        <Navbar />
-        {children}
-        <Footer />
+        <ThemeProvider defaultTheme="corporate">
+          <Navbar />
+          {children}
+          <Footer />
+        </ThemeProvider>
       </body>
     </html>
   );
