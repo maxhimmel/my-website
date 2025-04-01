@@ -2,6 +2,7 @@
 
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
+import { FaSun } from "react-icons/fa6";
 import { MdDarkMode, MdLightMode } from "react-icons/md";
 
 export function ThemeToggle() {
@@ -29,7 +30,7 @@ function Toggle() {
       }}
       className="btn btn-soft btn-primary btn-circle"
     >
-      {resolvedTheme === "dark" ? <MdDarkMode className="size-5" /> : <MdLightMode className="size-5" />}
+      {resolvedTheme === "dark" ? <MdDarkMode className="size-5" /> : <FaSun className="size-5" />}
     </button>
   );
 }
