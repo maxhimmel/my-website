@@ -1,6 +1,6 @@
 import Image from "next/image";
+import { RiExternalLinkFill, RiMailSendLine } from "react-icons/ri";
 import { AnchorScrollOffset } from "../lib/anchorScrollOffset";
-import { RiDownloadFill, RiMailSendLine } from "react-icons/ri";
 
 export function AboutMe() {
   return (
@@ -36,8 +36,8 @@ export function AboutMe() {
               <a href="mailto:himmelmax@gmail.com" className="btn btn-primary" target="_blank">
                 Email <RiMailSendLine />
               </a>
-              <a href="/resume.pdf" download="Max Himmel - Resume" className="btn btn-secondary">
-                Resume <RiDownloadFill />
+              <a href="/resume" target="_blank" className="btn btn-secondary">
+                Resume <RiExternalLinkFill />
               </a>
             </div>
           </div>

@@ -42,7 +42,9 @@ function NavLinks() {
         <DropdownLink href="/#about">About</DropdownLink>
       </li>
       <li>
-        <DropdownLink href="/resume">Resume</DropdownLink>
+        <DropdownLink href="/resume" newTab>
+          Resume
+        </DropdownLink>
       </li>
       <li>
         <DropdownLink href="/#about">Contact</DropdownLink>

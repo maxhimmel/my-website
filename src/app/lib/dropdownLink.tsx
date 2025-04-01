@@ -3,9 +3,14 @@
 import Link from "next/link";
 import { MouseEvent, PropsWithChildren } from "react";
 
-export function DropdownLink({ href, children }: { href: string } & PropsWithChildren) {
+type Props = PropsWithChildren & {
+  href: string;
+  newTab?: boolean;
+};
+
+export function DropdownLink({ href, children, newTab }: Props) {
   return (
-    <Link href={href} onClick={hideDropdown}>
+    <Link href={href} onClick={hideDropdown} target={newTab ? "_blank" : "_self"}>
       {children}
     </Link>
   );
