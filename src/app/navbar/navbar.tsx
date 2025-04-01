@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { RiMenuFill } from "react-icons/ri";
 import { DropdownLink } from "../lib/dropdownLink";
+import { ThemeToggle } from "../theme/themeToggle";
 
 export function Navbar() {
   return (
@@ -21,10 +22,11 @@ export function Navbar() {
           Max Himmel
         </Link>
       </div>
-      <div className="navbar-end hidden lg:flex">
-        <ul className="menu menu-horizontal px-1">
+      <div className="navbar-end">
+        <ul className="menu menu-horizontal px-1 hidden lg:flex">
           <NavLinks />
         </ul>
+        <ThemeToggle />
       </div>
     </div>
   );
