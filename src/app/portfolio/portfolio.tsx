@@ -29,7 +29,7 @@ function Work({ project }: { project: Project }) {
           width={400}
           height={300}
           priority
-          className="bg-center bg-cover max-w-none"
+          className="bg-center bg-cover"
         />
       </figure>
       <div className="card-body relative">
