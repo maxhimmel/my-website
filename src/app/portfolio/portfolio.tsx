@@ -8,8 +8,8 @@ export function Portfolio() {
   return (
     <div className="flex flex-col p-6 relative">
       <AnchorScrollOffset id="portfolio" />
-      {/* <h2 className="text-4xl font-black">Work</h2> */}
-      {/* <div className="divider"></div> */}
+      {/* <h2 className="text-4xl font-black">Work</h2>
+      <div className="divider"></div> */}
       <div className="grid grid-cols-[repeat(auto-fill,400px)] gap-4 justify-center justify-items-center">
         {PROJECTS.map((p) => (
           <Work key={p.name} project={p} />
@@ -22,7 +22,7 @@ export function Portfolio() {
 function Work({ project }: { project: Project }) {
   return (
     <div className="card bg-base-300 w-96 shadow-sm border-4 border-neutral">
-      <figure className="h-[192px] bg-neutral rounded-none">
+      <figure className="h-[192px] bg-neutral rounded-none w-full">
         <Image
           src={project.img}
           alt={project.name}
