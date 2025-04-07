@@ -12,7 +12,7 @@ export const PROJECTS: Project[] = [
     name: "Scratch Notes",
     desc: "Focused on redesigning a school project to improve developer experience and functionality using production-quality technologies.",
     sourceLink: "https://github.com/maxhimmel/dj-notes-2",
-    referenceLink: "https://dj-notes-2.onrender.com/",
+    referenceLink: "https://scratch-notes-539a6e946c42.herokuapp.com/",
     img: "https://i.imgur.com/gezKdM7.png",
     techStack: ["Nx", "tRPC", "Prisma"],
   },
