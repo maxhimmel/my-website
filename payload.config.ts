@@ -4,6 +4,11 @@ import { mongooseAdapter } from "@payloadcms/db-mongodb";
 import { buildConfig } from "payload";
 
 export default buildConfig({
+  cors: {
+    origins: ["http://localhost:3000"],
+    headers: ["x-custom-header"],
+  },
+
   // If you'd like to use Rich Text, pass your editor here
   editor: lexicalEditor(),
 
