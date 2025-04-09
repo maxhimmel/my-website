@@ -2,9 +2,9 @@ import sharp from "sharp";
 import { lexicalEditor } from "@payloadcms/richtext-lexical";
 import { mongooseAdapter } from "@payloadcms/db-mongodb";
 import { buildConfig } from "payload";
-import { Projects } from "./src/collections/projects";
-import { AboutMe } from "./src/collections/aboutMe";
-import { Skills } from "./src/collections/skills";
+import { Projects } from "./src/models/projects";
+import { AboutMe } from "./src/models/aboutMe";
+import { Skills } from "./src/models/skills";
 
 export default buildConfig({
   cors: {
