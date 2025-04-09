@@ -144,6 +144,7 @@ export interface Project {
 export interface Skill {
   id: string;
   name: string;
+  reactIcon: string;
   updatedAt: string;
   createdAt: string;
 }
@@ -250,6 +251,7 @@ export interface ProjectsSelect<T extends boolean = true> {
  */
 export interface SkillsSelect<T extends boolean = true> {
   name?: T;
+  reactIcon?: T;
   updatedAt?: T;
   createdAt?: T;
 }

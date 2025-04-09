@@ -9,5 +9,10 @@ export const Skills: CollectionConfig = {
       type: "text",
       required: true,
     },
+    {
+      name: "reactIcon",
+      type: "text",
+      required: true,
+    },
   ],
 };
