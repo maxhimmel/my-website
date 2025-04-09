@@ -1,3 +1,5 @@
+import config from "@payload-config";
+import { getPayload } from "payload";
 import { ReactNode } from "react";
 import {
   SiExpress,
@@ -15,19 +17,26 @@ import {
   SiTypescript,
 } from "react-icons/si";
 import { TbStackMiddle } from "react-icons/tb";
+import { type Skill } from "../../../../payload-types";
 import { AnchorScrollOffset } from "../lib/anchorScrollOffset";
 
-export function SkillsBanner() {
+export async function SkillsBanner() {
+  const payload = await getPayload({ config });
+  const { docs: skills } = await payload.find({
+    collection: "skills",
+    limit: Number.MAX_SAFE_INTEGER,
+  });
+
   return (
     <div className="flex w-full bg-base-200 overflow-x-clip border-t-2 border-primary shadow-xl dark:shadow-neutral">
       <AnchorScrollOffset id="skills" />
-      <Skills />
-      <Skills />
+      <Skills skills={skills} />
+      <Skills skills={skills} />
     </div>
   );
 }
 
-function Skills() {
+function Skills({ skills }: { skills: Skill[] }) {
   return (
     <div className="stats overflow-x-clip shadow animate-[scroll-left_80s_linear_infinite]">
       <Skill name="TypeScript" icon={<SiTypescript className="size-8" />} />
