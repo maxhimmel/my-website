@@ -5,6 +5,7 @@ import { buildConfig } from "payload";
 import { Projects } from "./src/models/projects";
 import { AboutMe } from "./src/models/aboutMe";
 import { Skills } from "./src/models/skills";
+import { Media } from "./src/models/media";
 
 export default buildConfig({
   cors: {
@@ -16,7 +17,7 @@ export default buildConfig({
   editor: lexicalEditor(),
 
   // Define and configure your collections in this array
-  collections: [Projects, Skills],
+  collections: [Projects, Skills, Media],
   globals: [AboutMe],
 
   // Your Payload secret - should be a complex and secure string, unguessable

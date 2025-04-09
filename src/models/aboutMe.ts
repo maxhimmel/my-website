@@ -10,7 +10,8 @@ export const AboutMe: GlobalConfig = {
     },
     {
       name: "profilePic",
-      type: "text",
+      type: "upload",
+      relationTo: "media",
       required: true,
     },
   ],
