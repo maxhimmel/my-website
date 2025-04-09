@@ -29,6 +29,8 @@ export async function Portfolio() {
 }
 
 function Work({ project }: { project: Project }) {
+  const prettyTechStack = project.techStack.map((t) => t.name).join(" · ");
+
   return (
     <div className="card bg-base-300 w-96 shadow-sm border-4 border-neutral">
       <figure className="h-[192px] bg-neutral rounded-none w-full">
@@ -44,7 +46,7 @@ function Work({ project }: { project: Project }) {
       <div className="card-body relative">
         <div className="flex justify-between">
           <h2 className="card-title">{project.name}</h2>
-          <div className="tooltip absolute bottom-0 right-0" data-tip={project.techStack.join(" · ")}>
+          <div className="tooltip absolute bottom-0 right-0" data-tip={prettyTechStack}>
             <div className="flex items-center gap-1 bg-neutral rounded-xl rounded-e-none p-2 pb-3">
               {project.techStack.map((tech) => (
                 <img
