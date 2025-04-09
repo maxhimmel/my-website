@@ -2,11 +2,12 @@
   "name": "my-website",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
   "scripts": {
-    "dev": "next dev --turbopack",
     "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
+    "dev": "next dev --turbopack",
+    "lint": "next lint",
+    "start": "next start"
   },
   "dependencies": {
     "@payloadcms/db-mongodb": "^3.33.0",
