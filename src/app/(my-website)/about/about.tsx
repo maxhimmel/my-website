@@ -1,12 +1,10 @@
-import config from "@payload-config";
 import Image from "next/image";
-import { getPayload } from "payload";
 import { RiExternalLinkFill, RiMailSendLine } from "react-icons/ri";
 import { AnchorScrollOffset } from "../lib/anchorScrollOffset";
+import { getAboutMe } from "./profileService";
 
 export async function AboutMe() {
-  const payload = await getPayload({ config });
-  const aboutMe = await payload.findGlobal({ slug: "aboutMe" });
+  const aboutMe = await getAboutMe();
 
   return (
     <div className="hero bg-base-200 relative">
@@ -15,7 +13,7 @@ export async function AboutMe() {
         <div className="mask mask-hexagon bg-primary p-2 animate-[spin_30s_linear_infinite]">
           <div className="mask mask-hexagon ">
             <Image
-              src="/profile-pic.jpg"
+              src={aboutMe.profilePic.url as string}
               alt="Picture of Max Himmel"
               width={433}
               height={433}
