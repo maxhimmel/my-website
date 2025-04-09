@@ -128,7 +128,7 @@ export interface Project {
   name: string;
   description: string;
   sourceLink?: string | null;
-  referenceLink?: string | null;
+  referenceLink: string;
   img: string;
   techStack: {
     name: string;

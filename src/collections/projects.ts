@@ -21,7 +21,7 @@ export const Projects: CollectionConfig = {
     {
       name: "referenceLink",
       type: "text",
-      required: false,
+      required: true,
     },
     {
       name: "img",

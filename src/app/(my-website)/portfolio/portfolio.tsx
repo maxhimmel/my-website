@@ -1,17 +1,26 @@
+import config from "@payload-config";
 import Image from "next/image";
+import { getPayload } from "payload";
 import { RiExternalLinkFill, RiLockFill } from "react-icons/ri";
 import { SiGithub } from "react-icons/si";
-import { Project, PROJECTS } from "../data/portfolio";
+import { Project } from "../../../../payload-types";
 import { AnchorScrollOffset } from "../lib/anchorScrollOffset";
 
-export function Portfolio() {
+export async function Portfolio() {
+  const payload = await getPayload({ config });
+  const { docs: projects } = await payload.find({
+    collection: "projects",
+    limit: Number.MAX_SAFE_INTEGER,
+    sort: "createdAt",
+  });
+
   return (
     <div className="flex flex-col p-6 relative">
       <AnchorScrollOffset id="portfolio" />
       {/* <h2 className="text-4xl font-black">Work</h2>
       <div className="divider"></div> */}
       <div className="grid grid-cols-[repeat(auto-fill,400px)] gap-4 justify-center justify-items-center">
-        {PROJECTS.map((p) => (
+        {projects.map((p) => (
           <Work key={p.name} project={p} />
         ))}
       </div>
@@ -39,16 +48,16 @@ function Work({ project }: { project: Project }) {
             <div className="flex items-center gap-1 bg-neutral rounded-xl rounded-e-none p-2 pb-3">
               {project.techStack.map((tech) => (
                 <img
-                  key={tech}
-                  alt={tech}
+                  key={tech.id}
+                  alt={tech.name}
                   className="size-5"
-                  src={`https://cdn.simpleicons.org/${tech}/white`}
+                  src={`https://cdn.simpleicons.org/${tech.name}/white`}
                 />
               ))}
             </div>
           </div>
         </div>
-        <i className="mb-4">{project.desc}</i>
+        <i className="mb-4">{project.description}</i>
         <div className="card-actions justify-start mt-auto">
           <a href={project.referenceLink} className="btn btn-accent" target="_blank">
             Launch <RiExternalLinkFill className="size-5/12" />
@@ -60,7 +69,7 @@ function Work({ project }: { project: Project }) {
   );
 }
 
-function SourceButton({ sourceLink }: { sourceLink?: string }) {
+function SourceButton({ sourceLink }: { sourceLink?: string | null }) {
   return sourceLink ? (
     <a href={sourceLink} className="btn btn-secondary" target="_blank">
       Source <SiGithub className="size-5/12" />
