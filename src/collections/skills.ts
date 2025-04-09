@@ -1,7 +1,7 @@
 import { CollectionConfig } from "payload";
 
-export const Skill: CollectionConfig = {
-  slug: "skill",
+export const Skills: CollectionConfig = {
+  slug: "skills",
   fields: [
     {
       name: "name",

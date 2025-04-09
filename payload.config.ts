@@ -2,9 +2,9 @@ import sharp from "sharp";
 import { lexicalEditor } from "@payloadcms/richtext-lexical";
 import { mongooseAdapter } from "@payloadcms/db-mongodb";
 import { buildConfig } from "payload";
-import { Project } from "./src/collections/project";
+import { Projects } from "./src/collections/projects";
 import { AboutMe } from "./src/collections/aboutMe";
-import { Skill } from "./src/collections/skill";
+import { Skills } from "./src/collections/skills";
 
 export default buildConfig({
   cors: {
@@ -16,7 +16,7 @@ export default buildConfig({
   editor: lexicalEditor(),
 
   // Define and configure your collections in this array
-  collections: [Project, Skill],
+  collections: [Projects, Skills],
   globals: [AboutMe],
 
   // Your Payload secret - should be a complex and secure string, unguessable
