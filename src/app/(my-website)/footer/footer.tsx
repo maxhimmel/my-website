@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { PropsWithChildren } from "react";
 import { SiGithub, SiLinkedin } from "react-icons/si";
 
 export function Footer() {
@@ -15,7 +16,9 @@ export function Footer() {
           />
         </div>
         <i>
-          Created by Max Himmel using Next.js & DaisyUI <b>♡</b>
+          Created by Max Himmel using <HoverLink href="https://nextjs.org/">Next.js</HoverLink>,{" "}
+          <HoverLink href="https://payloadcms.com/">Payload CMS</HoverLink>, &{" "}
+          <HoverLink href="https://daisyui.com/">DaisyUI</HoverLink> <b>♡</b>
         </i>
       </aside>
       <nav className="grid-flow-col gap-4 md:place-self-center md:justify-self-end">
@@ -27,5 +30,13 @@ export function Footer() {
         </a>
       </nav>
     </footer>
+  );
+}
+
+function HoverLink({ href, children }: { href: string } & PropsWithChildren) {
+  return (
+    <a href={href} target="_blank" className="hover:underline">
+      {children}
+    </a>
   );
 }
