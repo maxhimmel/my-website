@@ -1,4 +1,5 @@
 import { CollectionConfig } from "payload";
+import { validateURL } from "./lib/utils";
 
 export const Projects: CollectionConfig = {
   slug: "projects",
@@ -17,11 +18,13 @@ export const Projects: CollectionConfig = {
       name: "sourceLink",
       type: "text",
       required: false,
+      validate: validateURL,
     },
     {
       name: "referenceLink",
       type: "text",
       required: true,
+      validate: validateURL,
     },
     {
       name: "img",
