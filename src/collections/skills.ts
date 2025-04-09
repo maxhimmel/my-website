@@ -2,6 +2,7 @@ import { CollectionConfig } from "payload";
 
 export const Skills: CollectionConfig = {
   slug: "skills",
+  // orderable: true,
   fields: [
     {
       name: "name",
