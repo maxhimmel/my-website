@@ -9,8 +9,6 @@ import { Media } from "./src/models/media";
 import { vercelBlobStorage } from "@payloadcms/storage-vercel-blob";
 
 export default buildConfig({
-  csrf: ["https://maxhimmel.me", "http://localhost:3000"],
-
   // If you'd like to use Rich Text, pass your editor here
   editor: lexicalEditor(),
 
