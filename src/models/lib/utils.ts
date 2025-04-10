@@ -1,3 +1,6 @@
+import { AccessArgs } from "payload";
+import { User } from "../../../payload-types";
+
 export function validateURL(value: any) {
   if (!value) {
     return "This field is required";
@@ -9,4 +12,24 @@ export function validateURL(value: any) {
   } catch (_) {
     return "Invalid URL format";
   }
+}
+
+export function isAdminOrSelf(args: AccessArgs) {
+  if (isAdmin(args)) {
+    return true;
+  }
+
+  if (args.req.user) {
+    return {
+      email: {
+        equals: args.req.user.email,
+      },
+    };
+  }
+
+  return false;
+}
+
+export function isAdmin(args: AccessArgs) {
+  return args.req.user?.role === "admin";
 }

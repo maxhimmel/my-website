@@ -1,19 +1,24 @@
-import sharp from "sharp";
-import { lexicalEditor } from "@payloadcms/richtext-lexical";
 import { mongooseAdapter } from "@payloadcms/db-mongodb";
-import { buildConfig } from "payload";
-import { Projects } from "./src/models/projects";
-import { AboutMe } from "./src/models/aboutMe";
-import { Skills } from "./src/models/skills";
-import { Media } from "./src/models/media";
+import { lexicalEditor } from "@payloadcms/richtext-lexical";
 import { vercelBlobStorage } from "@payloadcms/storage-vercel-blob";
+import { buildConfig } from "payload";
+import sharp from "sharp";
+import { AboutMe } from "./src/models/aboutMe";
+import { Media } from "./src/models/media";
+import { Projects } from "./src/models/projects";
+import { Skills } from "./src/models/skills";
+import { Users } from "./src/models/users";
 
 export default buildConfig({
   // If you'd like to use Rich Text, pass your editor here
   editor: lexicalEditor(),
 
+  admin: {
+    user: Users.slug,
+  },
+
   // Define and configure your collections in this array
-  collections: [Projects, Skills, Media],
+  collections: [Users, Projects, Skills, Media],
   globals: [AboutMe],
 
   plugins: [

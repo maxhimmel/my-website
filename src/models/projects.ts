@@ -1,8 +1,14 @@
 import { CollectionConfig } from "payload";
-import { validateURL } from "./lib/utils";
+import { isAdmin, validateURL } from "./lib/utils";
 
 export const Projects: CollectionConfig = {
   slug: "projects",
+  access: {
+    unlock: isAdmin,
+    create: isAdmin,
+    delete: isAdmin,
+    update: isAdmin,
+  },
   fields: [
     {
       name: "name",
