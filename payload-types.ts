@@ -353,6 +353,7 @@ export interface AboutMe {
   id: string;
   summary: string;
   profilePic: string | Media;
+  resume: string | Media;
   updatedAt?: string | null;
   createdAt?: string | null;
 }
@@ -363,6 +364,7 @@ export interface AboutMe {
 export interface AboutMeSelect<T extends boolean = true> {
   summary?: T;
   profilePic?: T;
+  resume?: T;
   updatedAt?: T;
   createdAt?: T;
   globalType?: T;

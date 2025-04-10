@@ -14,5 +14,11 @@ export const AboutMe: GlobalConfig = {
       relationTo: "media",
       required: true,
     },
+    {
+      name: "resume",
+      type: "upload",
+      relationTo: "media",
+      required: true,
+    },
   ],
 };
