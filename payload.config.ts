@@ -6,6 +6,7 @@ import { Projects } from "./src/models/projects";
 import { AboutMe } from "./src/models/aboutMe";
 import { Skills } from "./src/models/skills";
 import { Media } from "./src/models/media";
+import { vercelBlobStorage } from "@payloadcms/storage-vercel-blob";
 
 export default buildConfig({
   cors: {
@@ -19,6 +20,17 @@ export default buildConfig({
   // Define and configure your collections in this array
   collections: [Projects, Skills, Media],
   globals: [AboutMe],
+
+  plugins: [
+    vercelBlobStorage({
+      // Specify which collections should use Vercel Blob
+      collections: {
+        media: true,
+      },
+      // Token provided by Vercel once Blob storage is added to your Vercel project
+      token: process.env.BLOB_READ_WRITE_TOKEN,
+    }),
+  ],
 
   // Your Payload secret - should be a complex and secure string, unguessable
   secret: process.env.PAYLOAD_SECRET || "",
