@@ -6,6 +6,7 @@
   "scripts": {
     "build": "next build",
     "dev": "next dev --turbopack",
+    "generate:importmap": "PAYLOAD_CONFIG_PATH=./payload.config.ts payload generate:importmap",
     "generate:types": "PAYLOAD_CONFIG_PATH=./payload.config.ts payload generate:types",
     "lint": "next lint",
     "start": "next start"
