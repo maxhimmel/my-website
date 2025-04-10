@@ -24,6 +24,7 @@ export function DiagonalStripesPattern({
     </div>
   ) : (
     <Pattern
+      uuid={crypto.randomUUID()}
       className={className}
       animations={animations}
       viewBoxWidth={40}

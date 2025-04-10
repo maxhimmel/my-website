@@ -24,6 +24,7 @@ export function SteelBeamsPattern({
     </div>
   ) : (
     <Pattern
+      uuid={crypto.randomUUID()}
       className={className}
       animations={animations}
       viewBoxWidth={42}

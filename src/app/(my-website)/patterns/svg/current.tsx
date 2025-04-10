@@ -24,6 +24,7 @@ export function CurrentPattern({
     </div>
   ) : (
     <Pattern
+      uuid={crypto.randomUUID()}
       className={className}
       animations={animations}
       viewBoxWidth={76}
