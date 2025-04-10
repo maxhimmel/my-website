@@ -30,6 +30,7 @@ export const Projects: CollectionConfig = {
       name: "img",
       type: "text",
       required: true,
+      validate: validateURL,
     },
     {
       name: "techStack",
