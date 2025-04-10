@@ -9,11 +9,6 @@ import { Media } from "./src/models/media";
 import { vercelBlobStorage } from "@payloadcms/storage-vercel-blob";
 
 export default buildConfig({
-  cors: {
-    origins: ["http://localhost:3000"],
-    headers: ["x-custom-header"],
-  },
-
   // If you'd like to use Rich Text, pass your editor here
   editor: lexicalEditor(),
 
