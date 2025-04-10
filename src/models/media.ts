@@ -1,5 +1,5 @@
 import { CollectionConfig } from "payload";
-import { isAdmin, isAdminOrSelf } from "./lib/utils";
+import { isAdmin } from "./lib/utils";
 
 export const Media: CollectionConfig = {
   slug: "media",

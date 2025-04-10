@@ -1,5 +1,4 @@
 import { AccessArgs } from "payload";
-import { User } from "../../../payload-types";
 
 export function validateURL(value: any) {
   if (!value) {
