@@ -1,8 +1,11 @@
-export default function Resume() {
+import { getAboutMe } from "../about/profileService";
+
+export default async function Resume() {
   // TODO: How do we handle error or loading?
-  return (
-    <iframe src="/resume.pdf" title="Resume" className="w-full h-screen" />
-  );
+
+  const aboutMe = await getAboutMe();
+
+  return <iframe src={aboutMe.resume.url as string} title="Resume" className="w-full h-screen" />;
 }
 
 function ErrorFallback() {

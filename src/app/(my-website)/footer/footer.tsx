@@ -1,13 +1,17 @@
 import Image from "next/image";
+import { PropsWithChildren } from "react";
 import { SiGithub, SiLinkedin } from "react-icons/si";
+import { getAboutMe } from "../about/profileService";
 
-export function Footer() {
+export async function Footer() {
+  const aboutMe = await getAboutMe();
+
   return (
     <footer className="footer sm:footer-horizontal bg-neutral text-neutral-content items-center p-4">
       <aside className="grid-flow-col items-center">
         <div className="mask mask-circle size-14 relative">
           <Image
-            src={"/profile-pic.jpg"}
+            src={aboutMe.profilePic.url as string}
             width={56}
             height={56}
             alt="Picture of Max Himmel"
@@ -15,7 +19,9 @@ export function Footer() {
           />
         </div>
         <i>
-          Created by Max Himmel using Next.js & DaisyUI <b>♡</b>
+          Created by Max Himmel using <HoverLink href="https://nextjs.org/">Next.js</HoverLink>,{" "}
+          <HoverLink href="https://payloadcms.com/">Payload CMS</HoverLink>, &{" "}
+          <HoverLink href="https://daisyui.com/">DaisyUI</HoverLink> <b>♡</b>
         </i>
       </aside>
       <nav className="grid-flow-col gap-4 md:place-self-center md:justify-self-end">
@@ -27,5 +33,13 @@ export function Footer() {
         </a>
       </nav>
     </footer>
+  );
+}
+
+function HoverLink({ href, children }: { href: string } & PropsWithChildren) {
+  return (
+    <a href={href} target="_blank" className="hover:underline">
+      {children}
+    </a>
   );
 }
