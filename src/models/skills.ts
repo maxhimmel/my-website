@@ -1,7 +1,14 @@
 import { CollectionConfig } from "payload";
+import { isAdmin, isAdminOrSelf } from "./lib/utils";
 
 export const Skills: CollectionConfig = {
   slug: "skills",
+  access: {
+    unlock: isAdmin,
+    create: isAdmin,
+    delete: isAdmin,
+    update: isAdmin,
+  },
   // orderable: true,
   fields: [
     {

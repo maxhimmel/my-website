@@ -1,9 +1,14 @@
 import { CollectionConfig } from "payload";
+import { isAdmin, isAdminOrSelf } from "./lib/utils";
 
 export const Media: CollectionConfig = {
   slug: "media",
   access: {
     read: (args) => true,
+    unlock: isAdmin,
+    create: isAdmin,
+    delete: isAdmin,
+    update: isAdmin,
   },
   upload: {
     staticDir: "media",
