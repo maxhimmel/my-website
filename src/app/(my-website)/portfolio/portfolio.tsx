@@ -1,18 +1,11 @@
-import config from "@payload-config";
 import Image from "next/image";
-import { getPayload } from "payload";
 import { RiExternalLinkFill, RiLockFill } from "react-icons/ri";
 import { SiGithub } from "react-icons/si";
-import { Project } from "../../../../payload-types";
 import { AnchorScrollOffset } from "../lib/anchorScrollOffset";
+import { getProjects, type Project } from "./portfolioService";
 
 export async function Portfolio() {
-  const payload = await getPayload({ config });
-  const { docs: projects } = await payload.find({
-    collection: "projects",
-    limit: Number.MAX_SAFE_INTEGER,
-    sort: "createdAt",
-  });
+  const projects = await getProjects();
 
   return (
     <div className="flex flex-col p-6 relative">
@@ -35,12 +28,12 @@ function Work({ project }: { project: Project }) {
     <div className="card bg-base-300 w-96 shadow-sm border-4 border-neutral">
       <figure className="h-[192px] bg-neutral rounded-none w-full">
         <Image
-          src={project.img}
+          src={project.img.url as string}
           alt={project.name}
-          width={400}
-          height={300}
+          width={project.img.width as number}
+          height={project.img.height as number}
           priority
-          className="bg-center bg-cover"
+          className="bg-center bg-cover rounded-t-sm"
         />
       </figure>
       <div className="card-body relative">
