@@ -149,22 +149,11 @@ export interface Project {
   description: string;
   sourceLink?: string | null;
   referenceLink: string;
-  img: string;
+  img: string | Media;
   techStack: {
     name: string;
     id?: string | null;
   }[];
-  updatedAt: string;
-  createdAt: string;
-}
-/**
- * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "skills".
- */
-export interface Skill {
-  id: string;
-  name: string;
-  reactIcon: string;
   updatedAt: string;
   createdAt: string;
 }
@@ -186,6 +175,17 @@ export interface Media {
   height?: number | null;
   focalX?: number | null;
   focalY?: number | null;
+}
+/**
+ * This interface was referenced by `Config`'s JSON-Schema
+ * via the `definition` "skills".
+ */
+export interface Skill {
+  id: string;
+  name: string;
+  reactIcon: string;
+  updatedAt: string;
+  createdAt: string;
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema

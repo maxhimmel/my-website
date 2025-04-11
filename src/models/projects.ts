@@ -34,9 +34,9 @@ export const Projects: CollectionConfig = {
     },
     {
       name: "img",
-      type: "text",
+      type: "upload",
       required: true,
-      validate: validateURL,
+      relationTo: "media",
     },
     {
       name: "techStack",
