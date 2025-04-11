@@ -34,6 +34,7 @@ function Work({ project }: { project: Project }) {
           height={project.img.height as number}
           priority
           className="bg-center bg-cover rounded-t-sm"
+          unoptimized={project.img.url?.endsWith(".gif")}
         />
       </figure>
       <div className="card-body relative">
