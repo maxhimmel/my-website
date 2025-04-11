@@ -1,17 +1,19 @@
-import { AccessArgs } from "payload";
+import { AccessArgs, TextFieldValidation } from "payload";
 
-export function validateURL(value: any) {
-  if (!value) {
+export const validateURL: TextFieldValidation = (value, options) => {
+  if (!value && options.required) {
     return "This field is required";
+  } else if (!value) {
+    return true;
   }
 
   try {
-    new URL(value);
+    new URL(value as string);
     return true;
   } catch (_) {
     return "Invalid URL format";
   }
-}
+};
 
 export function isAdminOrSelf(args: AccessArgs) {
   if (isAdmin(args)) {
