@@ -1,6 +1,6 @@
-import { ScrollHorizontalAnimation, ScrollVerticalAnimation } from "../patterns/svg/animations";
-import { TicTacToePattern } from "../patterns/svg/ticTacToe";
-import { TopographyPattern } from "../patterns/svg/topography";
+import { ScrollHorizontalAnimation, ScrollVerticalAnimation } from "../_patterns/svg/animations";
+import { TicTacToePattern } from "../_patterns/svg/ticTacToe";
+import { TopographyPattern } from "../_patterns/svg/topography";
 
 const ANIMATION = {
   direction: "up" as const,
