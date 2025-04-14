@@ -10,7 +10,7 @@ const ANIMATION = {
 
 export function HeroBanner() {
   return (
-    <div className="w-full h-56 border-t-2 border-b-2 border-primary shadow-xl dark:shadow-neutral">
+    <div className="w-full h-56 border-b-2 border-primary shadow-xl dark:shadow-neutral">
       <TopographyPattern
         className="bg-base-300 text-primary size-full"
         animations={[

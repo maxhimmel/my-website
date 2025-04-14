@@ -12,7 +12,7 @@ export async function SkillsBanner() {
   });
 
   return (
-    <div className="flex w-full bg-base-200 overflow-x-clip border-t-2 border-primary shadow-xl dark:shadow-neutral">
+    <div className="flex w-full bg-base-200 overflow-x-clip border-t-2 border-b-2 border-primary drop-shadow-xl shadow-xl dark:shadow-neutral">
       <AnchorScrollOffset id="skills" />
       <Skills skills={skills} />
       <Skills skills={skills} />
