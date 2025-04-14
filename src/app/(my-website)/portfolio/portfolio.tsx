@@ -25,7 +25,7 @@ function Work({ project }: { project: Project }) {
   const prettyTechStack = project.techStack.map((t) => t.name).join(" · ");
 
   return (
-    <article className="flex flex-col bg-base-300 border-4 border-neutral">
+    <article className="flex flex-col bg-base-300 border-4 border-neutral transition-all hover:shadow-xl hover:-translate-y-2 active:scale-95">
       <figure className="relative h-48 w-full overflow-clip flex justify-center items-center">
         <ImageWithSkeleton
           src={project.img.url as string}
