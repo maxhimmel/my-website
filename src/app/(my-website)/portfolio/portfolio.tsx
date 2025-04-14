@@ -1,7 +1,7 @@
-import Image from "next/image";
 import { RiExternalLinkFill, RiLockFill } from "react-icons/ri";
 import { SiGithub } from "react-icons/si";
 import { AnchorScrollOffset } from "../lib/anchorScrollOffset";
+import { ImageWithSkeleton } from "../lib/imageWithSkeleton";
 import { getProjects, type Project } from "./portfolioService";
 
 export async function Portfolio() {
@@ -14,7 +14,7 @@ export async function Portfolio() {
       <div className="divider"></div> */}
       <div className="grid grid-cols-[repeat(auto-fill,400px)] gap-4 justify-center justify-items-center">
         {projects.map((p) => (
-          <Work key={p.name} project={p} />
+          <Work key={p.id} project={p} />
         ))}
       </div>
     </div>
@@ -25,18 +25,18 @@ function Work({ project }: { project: Project }) {
   const prettyTechStack = project.techStack.map((t) => t.name).join(" · ");
 
   return (
-    <div className="card bg-base-300 w-96 shadow-sm border-4 border-neutral">
-      <figure className="h-[192px] bg-neutral rounded-none w-full">
-        <Image
+    <article className="flex flex-col bg-base-300 border-4 border-neutral">
+      <figure className="relative h-48 w-full overflow-clip flex justify-center items-center">
+        <ImageWithSkeleton
           src={project.img.url as string}
           alt={project.name}
           width={project.img.width as number}
           height={project.img.height as number}
           priority
-          className="bg-center bg-cover rounded-t-sm"
+          className="object-contain"
         />
       </figure>
-      <div className="card-body relative">
+      <div className="card-body relative border-t-4 border-neutral">
         <div className="flex justify-between">
           <h2 className="card-title">{project.name}</h2>
           <div className="tooltip absolute bottom-0 right-0" data-tip={prettyTechStack}>
@@ -60,7 +60,7 @@ function Work({ project }: { project: Project }) {
           <SourceButton sourceLink={project.sourceLink} />
         </div>
       </div>
-    </div>
+    </article>
   );
 }
 
