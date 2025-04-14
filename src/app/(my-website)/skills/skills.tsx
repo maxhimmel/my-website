@@ -22,7 +22,7 @@ export async function SkillsBanner() {
 
 function Skills({ skills }: { skills: Skill[] }) {
   return (
-    <div className="stats overflow-x-clip shadow animate-[scroll-left_80s_linear_infinite]">
+    <div className="flex animate-[scroll-left_80s_linear_infinite]">
       {skills.map((s) => (
         <Skill key={s.id} skill={s} />
       ))}

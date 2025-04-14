@@ -3,7 +3,6 @@ import { TicTacToePattern } from "../_patterns/svg/ticTacToe";
 import { TopographyPattern } from "../_patterns/svg/topography";
 
 const ANIMATION = {
-  direction: "up" as const,
   dur: "60s",
   repeatCount: "indefinite",
 };
@@ -16,7 +15,7 @@ export function HeroBanner() {
         animations={[
           <ScrollVerticalAnimation
             key={1}
-            direction={ANIMATION.direction}
+            direction={"up"}
             dur={ANIMATION.dur}
             repeatCount={ANIMATION.repeatCount}
           />,
