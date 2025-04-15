@@ -16,7 +16,7 @@
 
 This website was created using Next.js for the frontend/backend, DaisyUI to quickly style the frontend, and Payload CMS to help me manage the content of my site without needing to push changes to this repo.
 
-Next.js has built all the pages as ISR since the data from my CMS doesn't change too frquently.
+Next.js has built all the pages as ISR since the data from my CMS doesn't change too frquently. This is pretty neat because it means that the pages are generated essentially once at build time and are server-side rendered. They "incrementally" rebuild every 24 hours.
 
 ## :computer: Technologies Used
 

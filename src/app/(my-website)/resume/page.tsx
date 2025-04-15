@@ -1,5 +1,7 @@
 import { getAboutMe } from "../about/profileService";
 
+export const revalidate = 86400;
+
 export default async function Resume() {
   // TODO: How do we handle error or loading?
 
