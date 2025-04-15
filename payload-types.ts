@@ -182,6 +182,7 @@ export interface Media {
  */
 export interface Skill {
   id: string;
+  _order?: string;
   name: string;
   reactIcon: string;
   updatedAt: string;
@@ -292,6 +293,7 @@ export interface ProjectsSelect<T extends boolean = true> {
  * via the `definition` "skills_select".
  */
 export interface SkillsSelect<T extends boolean = true> {
+  _order?: T;
   name?: T;
   reactIcon?: T;
   updatedAt?: T;
