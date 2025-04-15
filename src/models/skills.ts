@@ -9,7 +9,7 @@ export const Skills: CollectionConfig = {
     delete: isAdmin,
     update: isAdmin,
   },
-  // orderable: true,
+  orderable: true,
   fields: [
     {
       name: "name",
