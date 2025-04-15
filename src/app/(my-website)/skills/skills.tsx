@@ -1,21 +1,22 @@
-import config from "@payload-config";
-import { getPayload } from "payload";
 import { type Skill } from "../../../../payload-types";
 import { AnchorScrollOffset } from "../lib/anchorScrollOffset";
 import { ReactIcon } from "../lib/reactIcon";
+import { ParallaxText } from "./parallaxText";
+import { getSkills } from "./skillService";
 
 export async function SkillsBanner() {
-  const payload = await getPayload({ config });
-  const { docs: skills } = await payload.find({
-    collection: "skills",
-    limit: Number.MAX_SAFE_INTEGER,
-  });
+  const skills = await getSkills();
 
   return (
     <div className="flex w-full bg-base-200 overflow-x-clip border-t-2 border-b-2 border-primary drop-shadow-xl shadow-xl dark:shadow-neutral">
       <AnchorScrollOffset id="skills" />
-      <Skills skills={skills} />
-      <Skills skills={skills} />
+      <ParallaxText baseVelocity={-1}>
+        {skills.map((s) => (
+          <Skill key={s.id} skill={s} />
+        ))}
+      </ParallaxText>
+      {/* <Skills skills={skills} />
+      <Skills skills={skills} /> */}
     </div>
   );
 }
