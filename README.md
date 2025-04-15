@@ -1,36 +1,34 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<div align="center" id="header">
+ 
+# My Portfolio Site
 
-## Getting Started
+<!-- <div id="header" align="center">
+  <img src="https://i.imgur.com/gezKdM7.png" width="800" height="400">
+</div> -->
 
-First, run the development server:
+**Created by [Max Himmel](https://www.linkedin.com/in/maxhimmel/)**
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+#### [VIEW HERE](https://maxhimmel.me/)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+</div>
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## :pencil: Description
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+This website was created using Next.js for the frontend/backend, DaisyUI to quickly style the frontend, and Payload CMS to help me manage the content of my site without needing to push changes to this repo.
 
-## Learn More
+Next.js has built all the pages as ISR since the data from my CMS doesn't change too frquently.
 
-To learn more about Next.js, take a look at the following resources:
+## :computer: Technologies Used
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+![Next.js](https://img.shields.io/badge/-Next-05122A?style=flat&logo=nextdotjs)
+![Payload CMS](https://img.shields.io/badge/-Payload-05122A?style=flat&logo=payloadcms)
+![daisyUI](https://img.shields.io/badge/-daisyUI-05122A?style=flat&logo=daisyUI)
+![TypeScript](https://img.shields.io/badge/-TypeScript-05122A?style=flat&logo=typescript)
+![MongoDB](https://img.shields.io/badge/-MongoDB-05122A?style=flat&logo=mongodb)
+![React](https://img.shields.io/badge/-React-05122A?style=flat&logo=react)
+![Tailwind](https://img.shields.io/badge/-Tailwind%20CSS-05122A?style=flat&logo=tailwindcss)
+![Node.js](https://img.shields.io/badge/-Node-05122A?style=flat&logo=nodedotjs)
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## :art: References
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+- [https://maxhimmel.me/](https://maxhimmel.me/)
