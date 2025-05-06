@@ -21,11 +21,13 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body>
-        <ThemeProvider defaultTheme="corporate">
-          <Navbar />
-          {children}
-          <Footer />
-        </ThemeProvider>
+        <div className="min-h-screen bg-background text-foreground">
+          <ThemeProvider defaultTheme="light" attribute="class">
+            <Navbar />
+            {children}
+            <Footer />
+          </ThemeProvider>
+        </div>
       </body>
     </html>
   );
