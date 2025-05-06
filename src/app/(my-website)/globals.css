@@ -1,36 +1,5 @@
 @import "tailwindcss";
 @import "tw-animate-css";
-@plugin "daisyui" {
-  themes:
-    corporate --default,
-    dark --prefersdark;
-}
-
-@custom-variant dark (&:where([data-theme=dark], [data-theme=dark] *));
-
-@theme {
-  --spacing-navbar-h: 5.5rem;
-
-  @keyframes spin-reverse {
-    0% {
-      transform: rotate(0deg);
-    }
-    100% {
-      transform: rotate(-360deg);
-    }
-  }
-
-  @keyframes scroll-left {
-    0% {
-      transform: translateX(0%);
-    }
-    100% {
-      transform: translateX(-100%);
-    }
-  }
-}
-
-/* --- NEW --- */
 
 html {
   scroll-behavior: smooth;
