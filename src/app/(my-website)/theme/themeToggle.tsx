@@ -26,11 +26,11 @@ function Toggle() {
   return (
     <button
       onClick={() => {
-        setTheme(resolvedTheme !== "dark" ? "dark" : "corporate");
+        setTheme(resolvedTheme !== "dark" ? "dark" : "light");
       }}
       className="btn btn-soft btn-primary btn-circle"
     >
-      {resolvedTheme === "dark" ? <MdDarkMode className="size-5" /> : <FaSun className="size-5" />}
+      {resolvedTheme === "dark" ? <FaSun className="size-5" /> : <MdDarkMode className="size-5" />}
     </button>
   );
 }
