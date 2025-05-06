@@ -3,7 +3,7 @@ import { ArrowRight } from "lucide-react";
 
 export function Hero() {
   return (
-    <section className="min-h-screen flex flex-col justify-center pt-16">
+    <section id="hero" className="min-h-screen flex flex-col justify-center pt-16">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-3xl">
           <h2 className="text-xl md:text-2xl font-medium text-primary opacity-0 animate-fade-in">
