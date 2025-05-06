@@ -45,7 +45,7 @@ export async function AboutMe() {
     <section
       id="about"
       // ref={sectionRef}
-      className="py-24 md:py-32 opacity-0 transition-opacity duration-1000 ease-in-out"
+      className="py-24 md:py-32 transition-opacity duration-1000 ease-in-out" //opacity-0
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <h2 className="text-3xl font-bold mb-12 flex items-center">
