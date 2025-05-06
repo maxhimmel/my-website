@@ -1,6 +1,6 @@
 import { AboutMe } from "./about/about";
+import { ContactMe } from "./contact/contact";
 import { Hero } from "./hero/hero";
-import { HeroBanner } from "./heroBanner/heroBanner";
 import { Portfolio } from "./portfolio/portfolio";
 import { Skills } from "./skills/skills";
 
@@ -13,6 +13,7 @@ export default function Home() {
       <AboutMe />
       <Skills />
       <Portfolio />
+      <ContactMe />
     </>
   );
 }
