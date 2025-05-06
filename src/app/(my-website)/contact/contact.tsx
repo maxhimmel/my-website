@@ -88,7 +88,7 @@ export function ContactMe() {
           </div>
 
           <div
-            className="flex flex-col justify-center space-y-8 animate-slide-up opacity-0"
+            className="flex flex-col space-y-8 animate-slide-up opacity-0"
             style={{ animationDelay: "0.4s" }}
           >
             <div className="space-y-2">
@@ -126,13 +126,6 @@ export function ContactMe() {
                   <p className="font-medium">github.com/maxhimmel</p>
                 </div>
               </div>
-            </div>
-
-            <div className="pt-6">
-              <p className="text-foreground/70 italic">
-                &quot;The best way to predict the future is to invent it.&quot;
-              </p>
-              <p className="text-right text-sm mt-2">- Alan Kay</p>
             </div>
           </div>
         </div>
