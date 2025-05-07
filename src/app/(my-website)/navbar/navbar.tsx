@@ -1,10 +1,10 @@
-import Link from "next/link";
 import {
   NavigationMenu,
   NavigationMenuItem,
   NavigationMenuLink,
   NavigationMenuList,
 } from "@/components/ui/navigation-menu";
+import Link from "next/link";
 import { ThemeToggle } from "../theme/themeToggle";
 
 export function Navbar() {
@@ -18,34 +18,34 @@ export function Navbar() {
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
-          <a href="#home" className="text-2xl font-bold text-primary">
+          <Link href="/#home" className="text-2xl font-bold text-primary">
             MH
-          </a>
+          </Link>
 
-          <NavigationMenu className={`container mx-auto`}>
-            <NavigationMenuList>
+          <NavigationMenu>
+            <NavigationMenuList className="space-x-8">
               <NavigationMenuItem>
-                <Link href="/docs" legacyBehavior passHref>
+                <Link href="/#about" legacyBehavior passHref>
                   <NavigationMenuLink>About</NavigationMenuLink>
                 </Link>
               </NavigationMenuItem>
               <NavigationMenuItem>
-                <Link href="/docs" legacyBehavior passHref>
+                <Link href="/#skills" legacyBehavior passHref>
                   <NavigationMenuLink>Skills</NavigationMenuLink>
                 </Link>
               </NavigationMenuItem>
               <NavigationMenuItem>
-                <Link href="/docs" legacyBehavior passHref>
+                <Link href="/#projects" legacyBehavior passHref>
                   <NavigationMenuLink>Projects</NavigationMenuLink>
                 </Link>
               </NavigationMenuItem>
               <NavigationMenuItem>
-                <Link href="/docs" legacyBehavior passHref>
+                <Link href="/#contact" legacyBehavior passHref>
                   <NavigationMenuLink>Contact</NavigationMenuLink>
                 </Link>
               </NavigationMenuItem>
               <NavigationMenuItem>
-                <Link href="/docs" legacyBehavior passHref>
+                <Link href="/resume" legacyBehavior passHref>
                   <NavigationMenuLink>Resume</NavigationMenuLink>
                 </Link>
               </NavigationMenuItem>
