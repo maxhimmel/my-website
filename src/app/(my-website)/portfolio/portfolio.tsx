@@ -1,7 +1,7 @@
 // import { useEffect, useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { ExternalLink, Github } from "lucide-react";
-import { Section } from "../lib/section";
+import { Section } from "../lib/section/section";
 
 // Mock projects data
 const projects = [
@@ -72,7 +72,7 @@ export function Portfolio() {
   // }, []);
 
   return (
-    <Section id="projects">
+    <Section.Root id="projects">
       <Section.Header order="03" title="Projects" />
 
       <div>
@@ -80,7 +80,7 @@ export function Portfolio() {
           <ProjectCard key={index} project={project} isEven={index % 2 !== 0} />
         ))}
       </div>
-    </Section>
+    </Section.Root>
   );
 }
 

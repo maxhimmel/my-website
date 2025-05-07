@@ -1,6 +1,6 @@
 // import { useEffect, useRef } from "react";
 
-import { Section } from "../lib/section";
+import { Section } from "../lib/section/section";
 
 const skills = [
   { category: "Languages", items: ["TypeScript", "JavaScript", "HTML", "CSS", "C#", "Python"] },
@@ -47,7 +47,7 @@ export function Skills() {
   // }, []);
 
   return (
-    <Section id="skills">
+    <Section.Root id="skills">
       <Section.Header order="02" title="Skills" />
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -61,7 +61,7 @@ export function Skills() {
           </div>
         ))}
       </div>
-    </Section>
+    </Section.Root>
   );
 }
 

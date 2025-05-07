@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 // import { useEffect, useRef, useState } from "react";
-import { Section } from "../lib/section";
+import { Section } from "../lib/section/section";
 import { getAboutMe } from "./profileService";
 
 export async function AboutMe() {
@@ -43,7 +43,7 @@ export async function AboutMe() {
   // }, []);
 
   return (
-    <Section id="about">
+    <Section.Root id="about">
       <Section.Header order="01" title="About Me" />
 
       <div className="grid md:grid-cols-3 gap-12">
@@ -85,6 +85,6 @@ export async function AboutMe() {
           <div className="absolute inset-0 border-2 border-primary rounded-md -z-10 translate-y-4 translate-x-4 transition-all duration-300 group-hover:translate-y-2 group-hover:translate-x-2"></div>
         </div>
       </div>
-    </Section>
+    </Section.Root>
   );
 }

@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Github, Linkedin, Mail } from "lucide-react";
-import { Section } from "../lib/section";
+import { Section } from "../lib/section/section";
 
 export function ContactMe() {
   // const sectionRef = useRef<HTMLElement>(null);
@@ -34,7 +34,7 @@ export function ContactMe() {
   // }, []);
 
   return (
-    <Section id="contact">
+    <Section.Root id="contact">
       <div className="max-w-3xl mx-auto text-center mb-12">
         <h2 className="text-3xl font-bold mb-4 flex items-center justify-center">
           <span className="text-primary mr-2">04.</span> Get In Touch
@@ -139,6 +139,6 @@ export function ContactMe() {
           </div>
         </div>
       </div>
-    </Section>
+    </Section.Root>
   );
 }
