@@ -103,7 +103,13 @@ export function ContactMe() {
                 </div>
                 <div>
                   <p className="text-sm text-foreground/70">Email</p>
-                  <p className="font-medium">himmelmax@gmail.com</p>
+                  <a
+                    className="font-medium hover:underline"
+                    target="_blank"
+                    href="mailto:himmelmax@gmail.com"
+                  >
+                    himmelmax@gmail.com
+                  </a>
                 </div>
               </div>
 
@@ -113,7 +119,13 @@ export function ContactMe() {
                 </div>
                 <div>
                   <p className="text-sm text-foreground/70">LinkedIn</p>
-                  <p className="font-medium">linkedin.com/in/maxhimmel</p>
+                  <a
+                    className="font-medium hover:underline"
+                    target="_blank"
+                    href="https://linkedin.com/in/maxhimmel"
+                  >
+                    linkedin.com/in/maxhimmel
+                  </a>
                 </div>
               </div>
 
@@ -123,7 +135,13 @@ export function ContactMe() {
                 </div>
                 <div>
                   <p className="text-sm text-foreground/70">GitHub</p>
-                  <p className="font-medium">github.com/maxhimmel</p>
+                  <a
+                    className="font-medium hover:underline"
+                    target="_blank"
+                    href="https://github.com/maxhimmel"
+                  >
+                    github.com/maxhimmel
+                  </a>
                 </div>
               </div>
             </div>
