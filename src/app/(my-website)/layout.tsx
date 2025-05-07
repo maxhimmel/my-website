@@ -5,7 +5,7 @@ import { Footer } from "./footer/footer";
 import { ThemeProvider } from "next-themes";
 
 export const metadata: Metadata = {
-  title: "Max Himmel",
+  title: "Max Himmel | Web Developer",
 };
 
 export const viewport: Viewport = {
