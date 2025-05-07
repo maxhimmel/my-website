@@ -1,6 +1,6 @@
 // import { useEffect, useRef } from "react";
 
-import { SectionHeader } from "../lib/sectionHeader";
+import { Section } from "../lib/section";
 
 const skills = [
   { category: "Languages", items: ["TypeScript", "JavaScript", "HTML", "CSS", "C#", "Python"] },
@@ -47,27 +47,21 @@ export function Skills() {
   // }, []);
 
   return (
-    <section
-      id="skills"
-      // ref={sectionRef}
-      className="py-24 md:py-32 bg-secondary/30 transition-opacity duration-1000 ease-in-out" //opacity-0
-    >
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <SectionHeader order="02" title="Skills" />
+    <Section id="skills">
+      <Section.Header order="02" title="Skills" />
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {skills.map((skill, index) => (
-            <div
-              key={index}
-              className="opacity-0 animate-slide-up"
-              style={{ animationDelay: `${index * 0.2}s` }}
-            >
-              <SkillCard category={skill.category} items={skill.items} />
-            </div>
-          ))}
-        </div>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        {skills.map((skill, index) => (
+          <div
+            key={index}
+            className="opacity-0 animate-slide-up"
+            style={{ animationDelay: `${index * 0.2}s` }}
+          >
+            <SkillCard category={skill.category} items={skill.items} />
+          </div>
+        ))}
       </div>
-    </section>
+    </Section>
   );
 }
 
