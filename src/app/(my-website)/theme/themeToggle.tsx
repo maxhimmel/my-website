@@ -1,9 +1,8 @@
 "use client";
 
+import { Moon, Sun } from "lucide-react";
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
-import { FaSun } from "react-icons/fa6";
-import { MdDarkMode, MdLightMode } from "react-icons/md";
 
 export function ThemeToggle() {
   const [isMounted, setIsMounted] = useState(false);
@@ -30,7 +29,7 @@ function Toggle() {
       }}
       className="btn btn-soft btn-primary btn-circle"
     >
-      {resolvedTheme === "dark" ? <FaSun className="size-5" /> : <MdDarkMode className="size-5" />}
+      {resolvedTheme === "dark" ? <Sun className="size-5" /> : <Moon className="size-5" />}
     </button>
   );
 }
