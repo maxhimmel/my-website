@@ -1,46 +1,9 @@
-// "use client";
-
 import Image from "next/image";
-// import { useEffect, useRef, useState } from "react";
 import { Section } from "../lib/section/section";
 import { getAboutMe } from "./profileService";
 
 export async function AboutMe() {
   const aboutMe = await getAboutMe();
-  // const sectionRef = useRef<HTMLElement>(null);
-  // const [aboutMe, setAboutMe] = useState<AboutMe | null>(null);
-
-  // useEffect(() => {
-  //   (async () => {
-  //     const aboutMe = await getAboutMe();
-  //     setAboutMe(aboutMe);
-  //   })();
-  // }, []);
-
-  // useEffect(() => {
-  //   const observer = new IntersectionObserver(
-  //     (entries) => {
-  //       const [entry] = entries;
-  //       if (entry.isIntersecting) {
-  //         entry.target.classList.add("opacity-100");
-  //         observer.unobserve(entry.target);
-  //       }
-  //     },
-  //     {
-  //       threshold: 0.1,
-  //     }
-  //   );
-
-  //   if (sectionRef.current) {
-  //     observer.observe(sectionRef.current);
-  //   }
-
-  //   return () => {
-  //     if (sectionRef.current) {
-  //       observer.unobserve(sectionRef.current);
-  //     }
-  //   };
-  // }, []);
 
   return (
     <Section.Root id="about">

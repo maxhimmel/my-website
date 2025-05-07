@@ -1,4 +1,3 @@
-// import { useEffect, useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { ExternalLink, Github } from "lucide-react";
 import { Section } from "../lib/section/section";
@@ -44,33 +43,6 @@ const projects = [
 ];
 
 export function Portfolio() {
-  // const sectionRef = useRef<HTMLElement>(null);
-
-  // useEffect(() => {
-  //   const observer = new IntersectionObserver(
-  //     (entries) => {
-  //       const [entry] = entries;
-  //       if (entry.isIntersecting) {
-  //         entry.target.classList.add("opacity-100");
-  //         observer.unobserve(entry.target);
-  //       }
-  //     },
-  //     {
-  //       threshold: 0.1,
-  //     }
-  //   );
-
-  //   if (sectionRef.current) {
-  //     observer.observe(sectionRef.current);
-  //   }
-
-  //   return () => {
-  //     if (sectionRef.current) {
-  //       observer.unobserve(sectionRef.current);
-  //     }
-  //   };
-  // }, []);
-
   return (
     <Section.Root id="projects">
       <Section.Header order="03" title="Projects" />

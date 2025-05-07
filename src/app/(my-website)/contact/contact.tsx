@@ -1,4 +1,3 @@
-// import { useEffect, useRef } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -6,33 +5,6 @@ import { Github, Linkedin, Mail } from "lucide-react";
 import { Section } from "../lib/section/section";
 
 export function ContactMe() {
-  // const sectionRef = useRef<HTMLElement>(null);
-
-  // useEffect(() => {
-  //   const observer = new IntersectionObserver(
-  //     (entries) => {
-  //       const [entry] = entries;
-  //       if (entry.isIntersecting) {
-  //         entry.target.classList.add("opacity-100");
-  //         observer.unobserve(entry.target);
-  //       }
-  //     },
-  //     {
-  //       threshold: 0.1,
-  //     }
-  //   );
-
-  //   if (sectionRef.current) {
-  //     observer.observe(sectionRef.current);
-  //   }
-
-  //   return () => {
-  //     if (sectionRef.current) {
-  //       observer.unobserve(sectionRef.current);
-  //     }
-  //   };
-  // }, []);
-
   return (
     <Section.Root id="contact">
       <div className="max-w-3xl mx-auto text-center mb-12">
