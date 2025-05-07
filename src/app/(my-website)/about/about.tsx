@@ -3,6 +3,7 @@
 import Image from "next/image";
 // import { useEffect, useRef, useState } from "react";
 import { getAboutMe } from "./profileService";
+import { SectionHeader } from "../lib/sectionHeader";
 
 export async function AboutMe() {
   const aboutMe = await getAboutMe();
@@ -48,10 +49,7 @@ export async function AboutMe() {
       className="py-24 md:py-32 transition-opacity duration-1000 ease-in-out" //opacity-0
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-3xl font-bold mb-12 flex items-center">
-          <span className="text-primary mr-2">01.</span> About Me
-          <span className="h-px bg-border grow ml-6"></span>
-        </h2>
+        <SectionHeader order="01" title="About Me" />
 
         <div className="grid md:grid-cols-3 gap-12">
           <div className="md:col-span-2 space-y-4">

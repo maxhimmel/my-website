@@ -1,5 +1,7 @@
 // import { useEffect, useRef } from "react";
 
+import { SectionHeader } from "../lib/sectionHeader";
+
 const skills = [
   { category: "Languages", items: ["TypeScript", "JavaScript", "HTML", "CSS", "C#", "Python"] },
   {
@@ -51,10 +53,7 @@ export function Skills() {
       className="py-24 md:py-32 bg-secondary/30 transition-opacity duration-1000 ease-in-out" //opacity-0
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-3xl font-bold mb-12 flex items-center">
-          <span className="text-primary mr-2">02.</span> Skills
-          <span className="h-px bg-border grow ml-6"></span>
-        </h2>
+        <SectionHeader order="02" title="Skills" />
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
           {skills.map((skill, index) => (

@@ -1,6 +1,7 @@
 // import { useEffect, useRef, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Github, ExternalLink } from "lucide-react";
+import { SectionHeader } from "../lib/sectionHeader";
 
 // Mock projects data
 const projects = [
@@ -77,10 +78,7 @@ export function Portfolio() {
       className="py-24 md:py-32 transition-opacity duration-1000 ease-in-out" //opacity-0
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-        <h2 className="text-3xl font-bold mb-12 flex items-center">
-          <span className="text-primary mr-2">03.</span> Projects
-          <span className="h-px bg-border grow ml-6"></span>
-        </h2>
+        <SectionHeader order="03" title="Projects" />
 
         <div>
           {projects.map((project, index) => (
