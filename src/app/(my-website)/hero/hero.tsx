@@ -21,9 +21,11 @@ export function Hero() {
             experiences.
           </p>
           <div className="mt-10 flex flex-wrap gap-4 opacity-0 animate-fade-in animate-delay-400">
-            <Button size="lg" className="group">
-              View My Work
-              <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+            <Button size="lg" className="group" asChild>
+              <a href="#projects">
+                View My Work{" "}
+                <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
+              </a>
             </Button>
             <Button size="lg" variant="outline" asChild>
               <a href="#contact">Get In Touch</a>
