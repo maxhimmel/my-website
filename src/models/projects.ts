@@ -4,11 +4,12 @@ import { isAdmin, validateURL } from "./lib/utils";
 export const Projects: CollectionConfig = {
   slug: "projects",
   access: {
-    unlock: isAdmin,
     create: isAdmin,
     delete: isAdmin,
+    unlock: isAdmin,
     update: isAdmin,
   },
+  orderable: true,
   fields: [
     {
       name: "name",
