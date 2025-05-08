@@ -1,7 +1,13 @@
 import { Button } from "@/components/ui/button";
+import config from "@payload-config";
+import { RichText } from "@payloadcms/richtext-lexical/react";
 import { ArrowDown, ArrowRight } from "lucide-react";
+import { getPayload } from "payload";
 
-export function Hero() {
+export async function Hero() {
+  const payload = await getPayload({ config });
+  const hero = await payload.findGlobal({ slug: "hero" });
+
   return (
     <section id="home" className="min-h-screen flex flex-col justify-center pt-16">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -13,13 +19,11 @@ export function Hero() {
             Max Himmel
           </h1>
           <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold text-foreground/70 mt-2 opacity-0 animate-fade-in animate-delay-200">
-            I build things for the web <span className="line-through">and games</span>.
+            <RichText data={hero.tagline} />
           </h2>
-          <p className="text-lg md:text-xl text-foreground/70 mt-6 max-w-2xl opacity-0 animate-fade-in animate-delay-300">
-            I&apos;m a full-stack web developer specializing in TypeScript and Node, with 6 years of video
-            game software experience. I create accessible, high-performance applications with engaging user
-            experiences.
-          </p>
+          <h3 className="text-lg md:text-xl text-foreground/70 mt-6 max-w-2xl opacity-0 animate-fade-in animate-delay-300">
+            <RichText data={hero.summary} />
+          </h3>
           <div className="mt-10 flex flex-wrap gap-4 opacity-0 animate-fade-in animate-delay-400">
             <Button size="lg" className="group" asChild>
               <a href="#projects">
