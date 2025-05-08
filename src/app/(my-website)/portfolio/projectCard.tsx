@@ -77,12 +77,6 @@ export function ProjectCard({ project, isEven }: ProjectCardProps) {
         </div>
         <div className={`flex gap-4 ${isEven ? "md:justify-end" : ""}`}>
           <SourceButton href={project.sourceLink} />
-          {/* <Button variant="ghost" size="icon" asChild>
-            <a href={project.sourceLink} target="_blank" rel="noopener noreferrer">
-              <Github className="h-5 w-5" />
-              <span className="sr-only">GitHub</span>
-            </a>
-          </Button> */}
           <Button variant="ghost" size="icon" asChild>
             <a href={project.referenceLink} target="_blank" rel="noopener noreferrer">
               <ExternalLink className="h-5 w-5" />
@@ -96,22 +90,12 @@ export function ProjectCard({ project, isEven }: ProjectCardProps) {
 }
 
 function SourceButton({ href }: { href?: string | null }) {
-  const hasLink = !!href;
-
-  // TODO: Style me so I look noticably disabled!
-  return (
-    <Button variant="ghost" disabled={!hasLink} size="icon" asChild>
-      {hasLink ? (
-        <a href={href} target="_blank" rel="noopener noreferrer">
-          <Github className="h-5 w-5" />
-          <span className="sr-only">GitHub</span>
-        </a>
-      ) : (
-        <a aria-disabled>
-          <Github className="h-5 w-5" />
-          <span className="sr-only">GitHub</span>
-        </a>
-      )}
+  return !!href ? (
+    <Button variant="ghost" size="icon" asChild>
+      <a href={href} target="_blank" rel="noopener noreferrer">
+        <Github className="h-5 w-5" />
+        <span className="sr-only">GitHub</span>
+      </a>
     </Button>
-  );
+  ) : null;
 }
