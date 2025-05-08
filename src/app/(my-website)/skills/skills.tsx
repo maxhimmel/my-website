@@ -1,22 +1,17 @@
+import config from "@payload-config";
+import { getPayload } from "payload";
+import { type Skill } from "../../../../payload-types";
 import { Section } from "../lib/section/section";
 
-const skills = [
-  { category: "Languages", items: ["TypeScript", "JavaScript", "HTML", "CSS", "C#", "Python"] },
-  {
-    category: "Frameworks & Libraries",
-    items: ["React", "Node.js", "Express", "Next.js", "Redux", "Tailwind CSS", "Unity"],
-  },
-  {
-    category: "Tools & Platforms",
-    items: ["Git", "Docker", "AWS", "MongoDB", "PostgreSQL", "VS Code", "Jest"],
-  },
-  {
-    category: "Other",
-    items: ["RESTful APIs", "GraphQL", "CI/CD", "Agile Methodologies", "Game Development", "UI/UX Design"],
-  },
-];
+type SkillItems = Skill["skills"];
 
-export function Skills() {
+export async function Skills() {
+  const payload = await getPayload({ config });
+  const { docs: skills } = await payload.find({
+    collection: "skills",
+    limit: Number.MAX_SAFE_INTEGER,
+  });
+
   return (
     <Section.Root id="skills">
       <Section.Header order="02" title="Skills" />
@@ -24,11 +19,11 @@ export function Skills() {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
         {skills.map((skill, index) => (
           <div
-            key={index}
+            key={skill.id}
             className="opacity-0 animate-slide-up"
             style={{ animationDelay: `${index * 0.2}s` }}
           >
-            <SkillCard category={skill.category} items={skill.items} />
+            <SkillCard category={skill.category} items={skill.skills} />
           </div>
         ))}
       </div>
@@ -36,15 +31,15 @@ export function Skills() {
   );
 }
 
-function SkillCard({ category, items }: { category: string; items: string[] }) {
+function SkillCard({ category, items }: { category: string; items: SkillItems }) {
   return (
     <div className="bg-card border rounded-lg p-6 transition-all duration-300 hover:shadow-md hover:border-primary/50">
       <h3 className="text-xl font-semibold mb-4 text-primary">{category}</h3>
       <ul className="space-y-2">
-        {items.map((item, index) => (
-          <li key={index} className="flex items-center">
+        {items.map((item) => (
+          <li key={item.id} className="flex items-center">
             <span className="mr-2 text-primary">&gt;</span>
-            {item}
+            {item.name}
           </li>
         ))}
       </ul>
