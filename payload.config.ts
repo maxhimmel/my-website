@@ -8,6 +8,9 @@ import { Media } from "./src/models/media";
 import { Projects } from "./src/models/projects";
 import { Skills } from "./src/models/skills";
 import { Users } from "./src/models/users";
+import { Hero } from "./src/models/hero";
+import { Contact } from "./src/models/contact";
+import { Resume } from "./src/models/resume";
 
 export default buildConfig({
   // If you'd like to use Rich Text, pass your editor here
@@ -18,8 +21,8 @@ export default buildConfig({
   },
 
   // Define and configure your collections in this array
-  collections: [Users, Projects, Skills, Media],
-  globals: [AboutMe],
+  collections: [Users, Media],
+  globals: [Hero, AboutMe, Skills, Projects, Contact, Resume],
 
   plugins: [
     vercelBlobStorage({
