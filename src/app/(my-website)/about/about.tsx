@@ -11,7 +11,8 @@ export async function AboutMe() {
 
       <div className="grid md:grid-cols-3 gap-12">
         <div className="md:col-span-2 space-y-4">
-          <p className="text-lg">
+          <p className="text-lg">{aboutMe.summary}</p>
+          {/* <p className="text-lg">
             Hello! I&apos;m Max, a passionate full-stack developer with a strong background in both web
             development and video game software. My journey in tech began 6 years ago when I started working
             in the gaming industry, where I learned to build high-performance, responsive systems.
@@ -29,7 +30,7 @@ export async function AboutMe() {
           <p className="text-lg">
             When I&apos;m not coding, you can find me exploring new technologies, contributing to open-source
             projects, or applying my game development knowledge to create interactive web experiences.
-          </p>
+          </p> */}
         </div>
 
         <div className="relative group">
