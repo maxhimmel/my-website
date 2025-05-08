@@ -2,11 +2,12 @@
 
 import { Button } from "@/components/ui/button";
 import { ExternalLink, Github } from "lucide-react";
+import Image from "next/image";
 import { useEffect, useRef } from "react";
-import { PROJECTS } from "./portfolio";
+import { Project } from "./portfolioService";
 
 interface ProjectCardProps {
-  project: (typeof PROJECTS)[0];
+  project: Project;
   isEven: boolean;
 }
 
@@ -52,32 +53,39 @@ export function ProjectCard({ project, isEven }: ProjectCardProps) {
       >
         <div className="absolute inset-0 bg-primary/20 flex items-center justify-center">
           {/* Placeholder for project image */}
-          <img src={project.imageUrl} alt={project.title} className="w-full h-full object-cover" />
+          <Image
+            src={project.img.url!}
+            alt={project.name}
+            className="w-full h-full object-cover"
+            width={project.img.width!}
+            height={project.img.height!}
+          />
         </div>
       </div>
 
       <div className={`w-full md:w-2/5 ${isEven ? "md:text-right md:order-1" : ""}`}>
         <h4 className="text-primary font-mono text-sm mb-1">Featured Project</h4>
-        <h3 className="text-2xl font-bold mb-4">{project.title}</h3>
+        <h3 className="text-2xl font-bold mb-4">{project.name}</h3>
         <div className={`bg-card rounded-lg p-6 shadow-lg mb-4 ${isEven ? "md:ml-auto" : ""}`}>
           <p className="text-foreground/80">{project.description}</p>
         </div>
         <div className={`flex flex-wrap gap-2 mb-4 ${isEven ? "md:justify-end" : ""}`}>
-          {project.tags.map((tag, index) => (
-            <span key={index} className="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm">
-              {tag}
+          {project.techStack.map((tag, index) => (
+            <span key={tag.id} className="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm">
+              {tag.name}
             </span>
           ))}
         </div>
         <div className={`flex gap-4 ${isEven ? "md:justify-end" : ""}`}>
-          <Button variant="ghost" size="icon" asChild>
-            <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
+          <SourceButton href={project.sourceLink} />
+          {/* <Button variant="ghost" size="icon" asChild>
+            <a href={project.sourceLink} target="_blank" rel="noopener noreferrer">
               <Github className="h-5 w-5" />
               <span className="sr-only">GitHub</span>
             </a>
-          </Button>
+          </Button> */}
           <Button variant="ghost" size="icon" asChild>
-            <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
+            <a href={project.referenceLink} target="_blank" rel="noopener noreferrer">
               <ExternalLink className="h-5 w-5" />
               <span className="sr-only">Live Demo</span>
             </a>
@@ -85,5 +93,26 @@ export function ProjectCard({ project, isEven }: ProjectCardProps) {
         </div>
       </div>
     </div>
+  );
+}
+
+function SourceButton({ href }: { href?: string | null }) {
+  const hasLink = !!href;
+
+  // TODO: Style me so I look noticably disabled!
+  return (
+    <Button variant="ghost" disabled={hasLink} size="icon" asChild>
+      {hasLink ? (
+        <a href={href} target="_blank" rel="noopener noreferrer">
+          <Github className="h-5 w-5" />
+          <span className="sr-only">GitHub</span>
+        </a>
+      ) : (
+        <a aria-disabled>
+          <Github className="h-5 w-5" />
+          <span className="sr-only">GitHub</span>
+        </a>
+      )}
+    </Button>
   );
 }
