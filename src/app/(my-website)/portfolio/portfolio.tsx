@@ -1,9 +1,10 @@
 import { Button } from "@/components/ui/button";
 import { ExternalLink, Github } from "lucide-react";
 import { Section } from "../lib/section/section";
+import { ProjectCard } from "./projectCard";
 
 // Mock projects data
-const projects = [
+export const PROJECTS = [
   {
     title: "E-commerce Platform",
     description:
@@ -48,93 +49,10 @@ export function Portfolio() {
       <Section.Header order="03" title="Projects" />
 
       <div>
-        {projects.map((project, index) => (
+        {PROJECTS.map((project, index) => (
           <ProjectCard key={index} project={project} isEven={index % 2 !== 0} />
         ))}
       </div>
     </Section.Root>
-  );
-}
-
-interface ProjectCardProps {
-  project: (typeof projects)[0];
-  isEven: boolean;
-}
-
-function ProjectCard({ project, isEven }: ProjectCardProps) {
-  // const cardRef = useRef<HTMLDivElement>(null);
-
-  // useEffect(() => {
-  //   const observer = new IntersectionObserver(
-  //     (entries) => {
-  //       const [entry] = entries;
-  //       if (entry.isIntersecting) {
-  //         entry.target.classList.add("opacity-100");
-  //         entry.target.classList.add(isEven ? "translate-x-0" : "-translate-x-0");
-  //         observer.unobserve(entry.target);
-  //       }
-  //     },
-  //     {
-  //       threshold: 0.1,
-  //     }
-  //   );
-
-  //   if (cardRef.current) {
-  //     observer.observe(cardRef.current);
-  //   }
-
-  //   return () => {
-  //     if (cardRef.current) {
-  //       observer.unobserve(cardRef.current);
-  //     }
-  //   };
-  // }, [isEven]);
-
-  return (
-    <div
-      // ref={cardRef}
-      className={`relative flex flex-col md:flex-row items-center gap-6 md:gap-10 p-6 mb-20 transition-all duration-700 ease-out ${
-        //opacity-0
-        isEven ? "translate-x-10" : "-translate-x-10"
-      }`}
-    >
-      <div
-        className={`relative w-full md:w-3/5 aspect-video overflow-hidden rounded-lg border ${isEven ? "md:order-2" : ""}`}
-      >
-        <div className="absolute inset-0 bg-primary/20 flex items-center justify-center">
-          {/* Placeholder for project image */}
-          <img src={project.imageUrl} alt={project.title} className="w-full h-full object-cover" />
-        </div>
-      </div>
-
-      <div className={`w-full md:w-2/5 ${isEven ? "md:text-right md:order-1" : ""}`}>
-        <h4 className="text-primary font-mono text-sm mb-1">Featured Project</h4>
-        <h3 className="text-2xl font-bold mb-4">{project.title}</h3>
-        <div className={`bg-card rounded-lg p-6 shadow-lg mb-4 ${isEven ? "md:ml-auto" : ""}`}>
-          <p className="text-foreground/80">{project.description}</p>
-        </div>
-        <div className={`flex flex-wrap gap-2 mb-4 ${isEven ? "md:justify-end" : ""}`}>
-          {project.tags.map((tag, index) => (
-            <span key={index} className="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm">
-              {tag}
-            </span>
-          ))}
-        </div>
-        <div className={`flex gap-4 ${isEven ? "md:justify-end" : ""}`}>
-          <Button variant="ghost" size="icon" asChild>
-            <a href={project.githubUrl} target="_blank" rel="noopener noreferrer">
-              <Github className="h-5 w-5" />
-              <span className="sr-only">GitHub</span>
-            </a>
-          </Button>
-          <Button variant="ghost" size="icon" asChild>
-            <a href={project.liveUrl} target="_blank" rel="noopener noreferrer">
-              <ExternalLink className="h-5 w-5" />
-              <span className="sr-only">Live Demo</span>
-            </a>
-          </Button>
-        </div>
-      </div>
-    </div>
   );
 }
