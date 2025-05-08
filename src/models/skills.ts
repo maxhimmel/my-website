@@ -1,32 +1,29 @@
-import { GlobalConfig } from "payload";
+import { CollectionConfig } from "payload";
 import { isAdmin } from "./lib/utils";
 
-export const Skills: GlobalConfig = {
+export const Skills: CollectionConfig = {
   slug: "skills",
   access: {
+    create: isAdmin,
+    delete: isAdmin,
+    unlock: isAdmin,
     update: isAdmin,
   },
+  orderable: true,
   fields: [
+    {
+      name: "category",
+      type: "text",
+      required: true,
+    },
     {
       name: "skills",
       type: "array",
       required: true,
       fields: [
         {
-          name: "category",
+          name: "name",
           type: "text",
-          required: true,
-        },
-        {
-          name: "entries",
-          type: "array",
-          required: true,
-          fields: [
-            {
-              name: "name",
-              type: "text",
-            },
-          ],
         },
       ],
     },
