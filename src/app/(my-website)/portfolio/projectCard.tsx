@@ -52,11 +52,10 @@ export function ProjectCard({ project, isEven }: ProjectCardProps) {
         className={`relative w-full md:w-3/5 aspect-video overflow-hidden rounded-lg border ${isEven ? "md:order-2" : ""}`}
       >
         <div className="absolute inset-0 bg-primary/20 flex items-center justify-center">
-          {/* Placeholder for project image */}
           <Image
             src={project.img.url!}
             alt={project.name}
-            className="w-full h-full object-cover"
+            className="w-full h-full object-cover hover:scale-[103%] transition-transform duration-1000"
             width={project.img.width!}
             height={project.img.height!}
           />
@@ -101,7 +100,7 @@ function SourceButton({ href }: { href?: string | null }) {
 
   // TODO: Style me so I look noticably disabled!
   return (
-    <Button variant="ghost" disabled={hasLink} size="icon" asChild>
+    <Button variant="ghost" disabled={!hasLink} size="icon" asChild>
       {hasLink ? (
         <a href={href} target="_blank" rel="noopener noreferrer">
           <Github className="h-5 w-5" />
