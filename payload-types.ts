@@ -410,7 +410,21 @@ export interface Hero {
  */
 export interface AboutMe {
   id: string;
-  summary: string;
+  summary: {
+    root: {
+      type: string;
+      children: {
+        type: string;
+        version: number;
+        [k: string]: unknown;
+      }[];
+      direction: ('ltr' | 'rtl') | null;
+      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
+      indent: number;
+      version: number;
+    };
+    [k: string]: unknown;
+  };
   profilePic: string | Media;
   updatedAt?: string | null;
   createdAt?: string | null;

@@ -9,7 +9,7 @@ export const AboutMe: GlobalConfig = {
   fields: [
     {
       name: "summary",
-      type: "textarea",
+      type: "richText",
       required: true,
     },
     {
