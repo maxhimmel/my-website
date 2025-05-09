@@ -46,7 +46,6 @@ export async function AboutMe() {
               </div>
             </div>
           </div>
-          <div className="absolute inset-0 border-2 border-primary rounded-md -z-10 translate-y-4 translate-x-4 transition-all duration-300 group-hover:translate-y-2 group-hover:translate-x-2"></div>
         </div>
       </div>
     </Section.Root>
