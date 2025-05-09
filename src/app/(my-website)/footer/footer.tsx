@@ -8,7 +8,9 @@ export function Footer() {
           <p className="text-foreground/70 text-sm">&copy; {currentYear} Max Himmel. All rights reserved.</p>
 
           <div className="mt-4 md:mt-0">
-            <p className="text-foreground/70 text-sm">Designed & Built with ❤️</p>
+            <p className="text-foreground/70 text-sm">
+              Designed & Built with Next.js, Shadcn, & Payload CMS.
+            </p>
           </div>
         </div>
       </div>
