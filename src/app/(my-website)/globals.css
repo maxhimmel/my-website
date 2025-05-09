@@ -14,7 +14,7 @@ html {
   --popover-foreground: hsl(240 10% 3.9%);
   --primary: hsl(252 94% 67%);
   --primary-foreground: hsl(0 0% 98%);
-  --secondary: hsl(240 4.8% 95.9%);
+  --secondary: hsl(240 4.8% 93%);
   --secondary-foreground: hsl(240 5.9% 10%);
   --muted: hsl(240 4.8% 95.9%);
   --muted-foreground: hsl(240 3.8% 46.1%);
@@ -23,7 +23,7 @@ html {
   --destructive: hsl(0 84.2% 60.2%);
   --destructive-foreground: hsl(0 0% 98%);
   --border: hsl(240 5.9% 90%);
-  --input: hsl(240 5.9% 90%);
+  --input: hsl(240 5.9% 87%);
   --ring: hsl(252 94% 67%);
   --chart-1: hsl(252 94% 67%);
   --chart-2: hsl(282.29 43.57% 47.25%);
