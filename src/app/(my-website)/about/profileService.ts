@@ -3,9 +3,8 @@ import { getPayload } from "payload";
 import { cache } from "react";
 import { AboutMe as AboutMeType, Media } from "../../../../payload-types";
 
-export type AboutMe = Omit<AboutMeType, "profilePic" | "resume"> & {
+export type AboutMe = Omit<AboutMeType, "profilePic"> & {
   profilePic: Media;
-  resume: Media;
 };
 
 // This method is being resused on the home page twice.
@@ -19,6 +18,5 @@ export const getAboutMe = cache(async () => {
   return {
     ...aboutMe,
     profilePic: aboutMe.profilePic as Media,
-    resume: aboutMe.resume as Media,
   } as AboutMe;
 });
