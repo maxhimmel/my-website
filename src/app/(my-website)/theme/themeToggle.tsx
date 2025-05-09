@@ -1,5 +1,7 @@
 "use client";
 
+import { Button } from "@/components/ui/button";
+import { Skeleton } from "@/components/ui/skeleton";
 import { Moon, Sun } from "lucide-react";
 import { useTheme } from "next-themes";
 import { useEffect, useState } from "react";
@@ -12,24 +14,22 @@ export function ThemeToggle() {
 }
 
 function Loading() {
-  return (
-    <button className="btn btn-soft btn-primary btn-circle btn-disabled">
-      <span className="loading loading-ring size-7"></span>
-    </button>
-  );
+  return <Skeleton className="size-9 rounded-full" />;
 }
 
 function Toggle() {
   const { setTheme, resolvedTheme } = useTheme();
 
   return (
-    <button
+    <Button
+      variant="ghost"
+      className="rounded-full hover:cursor-pointer"
+      size="icon"
       onClick={() => {
         setTheme(resolvedTheme !== "dark" ? "dark" : "light");
       }}
-      className="btn btn-soft btn-primary btn-circle"
     >
       {resolvedTheme === "dark" ? <Sun className="size-5" /> : <Moon className="size-5" />}
-    </button>
+    </Button>
   );
 }
