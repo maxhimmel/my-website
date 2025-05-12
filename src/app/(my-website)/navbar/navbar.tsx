@@ -62,7 +62,7 @@ export function Navbar() {
             </NavigationMenuList>
           </NavigationMenu>
 
-          <div className="flex justify-center space-x-2">
+          <div className="flex justify-center">
             <ThemeToggle />
 
             <Button
