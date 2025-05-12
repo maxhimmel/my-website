@@ -1,37 +1,40 @@
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import config from "@payload-config";
 import { Github, Linkedin, Mail } from "lucide-react";
+import { getPayload } from "payload";
 import { Section } from "../lib/section/section";
+import { sendEmail } from "./sendEmail";
 
-export function ContactMe() {
+export async function ContactMe() {
+  const payload = await getPayload({ config });
+  const contact = await payload.findGlobal({ slug: "contact" });
+
   return (
     <Section.Root id="contact">
       <div className="max-w-3xl mx-auto text-center mb-12">
         <h2 className="text-3xl font-bold mb-4 flex items-center justify-center">
           <span className="text-primary mr-2">04.</span> Get In Touch
         </h2>
-        <p className="text-lg text-foreground/70">
-          I&apos;m currently open to new opportunities and would love to hear from you. Whether you have a
-          question or just want to say hi, I&apos;ll do my best to get back to you!
-        </p>
+        <p className="text-lg text-foreground/70">{contact.callToAction}</p>
       </div>
 
       <div className="grid md:grid-cols-2 gap-10">
         <div className="space-y-6 animate-slide-up opacity-0" style={{ animationDelay: "0.2s" }}>
-          <form className="space-y-4">
+          <form className="space-y-4" action={sendEmail.bind(null, contact.email)}>
             <div className="grid grid-cols-2 gap-4">
               <div>
                 <label htmlFor="name" className="block text-sm font-medium mb-1">
                   Name
                 </label>
-                <Input id="name" placeholder="Your Name" />
+                <Input id="name" name="name" required placeholder="Your Name" />
               </div>
               <div>
                 <label htmlFor="email" className="block text-sm font-medium mb-1">
                   Email
                 </label>
-                <Input id="email" type="email" placeholder="your@email.com" />
+                <Input id="email" name="email" required type="email" placeholder="your@email.com" />
               </div>
             </div>
 
@@ -39,14 +42,20 @@ export function ContactMe() {
               <label htmlFor="subject" className="block text-sm font-medium mb-1">
                 Subject
               </label>
-              <Input id="subject" placeholder="How can I help you?" />
+              <Input id="subject" name="subject" required placeholder="How can I help you?" />
             </div>
 
             <div>
               <label htmlFor="message" className="block text-sm font-medium mb-1">
                 Message
               </label>
-              <Textarea id="message" placeholder="Your message..." className="min-h-[150px]" />
+              <Textarea
+                id="message"
+                name="message"
+                required
+                placeholder="Your message..."
+                className="min-h-[150px]"
+              />
             </div>
 
             <Button type="submit" className="w-full">
@@ -71,8 +80,8 @@ export function ContactMe() {
               </div>
               <div>
                 <p className="text-sm text-foreground/70">Email</p>
-                <a className="font-medium hover:underline" target="_blank" href="mailto:himmelmax@gmail.com">
-                  himmelmax@gmail.com
+                <a className="font-medium hover:underline" target="_blank" href={`mailto:${contact.email}`}>
+                  {contact.email}
                 </a>
               </div>
             </div>
@@ -83,12 +92,8 @@ export function ContactMe() {
               </div>
               <div>
                 <p className="text-sm text-foreground/70">LinkedIn</p>
-                <a
-                  className="font-medium hover:underline"
-                  target="_blank"
-                  href="https://linkedin.com/in/maxhimmel"
-                >
-                  linkedin.com/in/maxhimmel
+                <a className="font-medium hover:underline" target="_blank" href={contact.linkedin}>
+                  {contact.linkedin.replace("https://", "")}
                 </a>
               </div>
             </div>
@@ -99,12 +104,8 @@ export function ContactMe() {
               </div>
               <div>
                 <p className="text-sm text-foreground/70">GitHub</p>
-                <a
-                  className="font-medium hover:underline"
-                  target="_blank"
-                  href="https://github.com/maxhimmel"
-                >
-                  github.com/maxhimmel
+                <a className="font-medium hover:underline" target="_blank" href={contact.github}>
+                  {contact.github.replace("https://", "")}
                 </a>
               </div>
             </div>
