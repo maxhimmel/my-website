@@ -5,6 +5,7 @@ import config from "@payload-config";
 import { Github, Linkedin, Mail } from "lucide-react";
 import { getPayload } from "payload";
 import { Section } from "../lib/section/section";
+import { sendEmail } from "./sendEmail";
 
 export async function ContactMe() {
   const payload = await getPayload({ config });
@@ -21,19 +22,19 @@ export async function ContactMe() {
 
       <div className="grid md:grid-cols-2 gap-10">
         <div className="space-y-6 animate-slide-up opacity-0" style={{ animationDelay: "0.2s" }}>
-          <form className="space-y-4">
+          <form className="space-y-4" action={sendEmail.bind(null, contact.email)}>
             <div className="grid grid-cols-2 gap-4">
               <div>
                 <label htmlFor="name" className="block text-sm font-medium mb-1">
                   Name
                 </label>
-                <Input id="name" placeholder="Your Name" />
+                <Input id="name" name="name" required placeholder="Your Name" />
               </div>
               <div>
                 <label htmlFor="email" className="block text-sm font-medium mb-1">
                   Email
                 </label>
-                <Input id="email" type="email" placeholder="your@email.com" />
+                <Input id="email" name="email" required type="email" placeholder="your@email.com" />
               </div>
             </div>
 
@@ -41,14 +42,20 @@ export async function ContactMe() {
               <label htmlFor="subject" className="block text-sm font-medium mb-1">
                 Subject
               </label>
-              <Input id="subject" placeholder="How can I help you?" />
+              <Input id="subject" name="subject" required placeholder="How can I help you?" />
             </div>
 
             <div>
               <label htmlFor="message" className="block text-sm font-medium mb-1">
                 Message
               </label>
-              <Textarea id="message" placeholder="Your message..." className="min-h-[150px]" />
+              <Textarea
+                id="message"
+                name="message"
+                required
+                placeholder="Your message..."
+                className="min-h-[150px]"
+              />
             </div>
 
             <Button type="submit" className="w-full">
