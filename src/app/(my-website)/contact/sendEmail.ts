@@ -39,8 +39,10 @@ export async function sendEmail(myEmail: string, prevState: Result, form: FormDa
 function formatMessage(form: FormData) {
   return {
     subject: form.get("subject")?.toString(),
-    html: `<h1>${form.get("name")}</h1>
-    <h2>\<${form.get("email")}\></h2>
-    <h3>${form.get("message")}</h3>`,
+    html: `
+      <h1 style="display: inline;">${form.get("name")}</h1>
+      <h2 style="display: inline; margin-left: 10px;">&lt;${form.get("email")}&gt;</h2>
+      <h3>${form.get("message")}</h3>
+    `,
   };
 }
