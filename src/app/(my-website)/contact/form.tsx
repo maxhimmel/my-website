@@ -21,7 +21,7 @@ export function Form({ email }: Props) {
     } else {
       toast.error("Something went wrong.", { description: "I'm sorry about that 🤔" });
     }
-  }, [state.sent]);
+  }, [state]);
 
   return (
     <form className="space-y-4" action={formAction}>
