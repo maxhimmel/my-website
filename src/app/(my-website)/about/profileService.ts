@@ -1,7 +1,11 @@
 import config from "@payload-config";
 import { getPayload } from "payload";
 import { cache } from "react";
-import { Media } from "../../../../payload-types";
+import { AboutMe as AboutMeType, Media } from "../../../../payload-types";
+
+export type AboutMe = Omit<AboutMeType, "profilePic"> & {
+  profilePic: Media;
+};
 
 // This method is being resused on the home page twice.
 // Once, by the AboutMe component.
@@ -14,6 +18,5 @@ export const getAboutMe = cache(async () => {
   return {
     ...aboutMe,
     profilePic: aboutMe.profilePic as Media,
-    resume: aboutMe.resume as Media,
-  };
+  } as AboutMe;
 });

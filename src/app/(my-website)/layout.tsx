@@ -3,9 +3,10 @@ import "./globals.css";
 import { Navbar } from "./navbar/navbar";
 import { Footer } from "./footer/footer";
 import { ThemeProvider } from "next-themes";
+import { Toaster } from "@/components/ui/sonner";
 
 export const metadata: Metadata = {
-  title: "Max Himmel",
+  title: "Max Himmel | Web Developer",
 };
 
 export const viewport: Viewport = {
@@ -21,11 +22,14 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body>
-        <ThemeProvider defaultTheme="corporate">
-          <Navbar />
-          {children}
-          <Footer />
-        </ThemeProvider>
+        <div className="min-h-screen bg-background text-foreground">
+          <ThemeProvider defaultTheme="light" attribute="class">
+            <Navbar />
+            {children}
+            <Footer />
+          </ThemeProvider>
+        </div>
+        <Toaster />
       </body>
     </html>
   );

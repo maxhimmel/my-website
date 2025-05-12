@@ -1,17 +1,19 @@
 import { AboutMe } from "./about/about";
-import { HeroBanner } from "./heroBanner/heroBanner";
+import { ContactMe } from "./contact/contact";
+import { Hero } from "./hero/hero";
 import { Portfolio } from "./portfolio/portfolio";
-import { SkillsBanner } from "./skills/skills";
+import { Skills } from "./skills/skills";
 
 export const revalidate = 86400;
 
 export default function Home() {
   return (
     <>
+      <Hero />
       <AboutMe />
-      <SkillsBanner />
-      <HeroBanner />
+      <Skills />
       <Portfolio />
+      <ContactMe />
     </>
   );
 }

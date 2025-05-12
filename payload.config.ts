@@ -4,8 +4,11 @@ import { vercelBlobStorage } from "@payloadcms/storage-vercel-blob";
 import { buildConfig } from "payload";
 import sharp from "sharp";
 import { AboutMe } from "./src/models/aboutMe";
+import { Contact } from "./src/models/contact";
+import { Hero } from "./src/models/hero";
 import { Media } from "./src/models/media";
 import { Projects } from "./src/models/projects";
+import { Resume } from "./src/models/resume";
 import { Skills } from "./src/models/skills";
 import { Users } from "./src/models/users";
 
@@ -18,8 +21,8 @@ export default buildConfig({
   },
 
   // Define and configure your collections in this array
-  collections: [Users, Projects, Skills, Media],
-  globals: [AboutMe],
+  collections: [Skills, Projects, Media, Users],
+  globals: [Hero, AboutMe, Contact, Resume],
 
   plugins: [
     vercelBlobStorage({

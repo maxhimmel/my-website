@@ -1,54 +1,99 @@
+"use client";
+
+import { Button } from "@/components/ui/button";
+import {
+  NavigationMenu,
+  NavigationMenuItem,
+  NavigationMenuLink,
+  NavigationMenuList,
+} from "@/components/ui/navigation-menu";
+import { X as Close, Menu } from "lucide-react";
 import Link from "next/link";
-import { RiMenuFill } from "react-icons/ri";
-import { DropdownLink } from "../lib/dropdownLink";
+import { useEffect, useState } from "react";
 import { ThemeToggle } from "../theme/themeToggle";
 
-export function Navbar() {
-  return (
-    <div className="navbar bg-base-300 sticky top-0 z-10 border-b-8 border-primary shadow-xl dark:shadow-neutral">
-      <div className="navbar-start">
-        <div className="dropdown">
-          <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
-            <RiMenuFill className="size-6" />
-          </div>
-          <ul
-            tabIndex={0}
-            className="menu menu-md dropdown-content absolute top-full mt-4 -left-2 w-dvw bg-transparent backdrop-blur-3xl rounded-box rounded-t-none z-1 p-2 shadow-lg dark:shadow-neutral border-2 border-primary"
-          >
-            <NavLinks />
-          </ul>
-        </div>
-        <Link href="/" className="btn btn-ghost font-black text-3xl">
-          Max Himmel
-        </Link>
-      </div>
-      <div className="navbar-end">
-        <ul className="menu menu-horizontal px-1 hidden lg:flex">
-          <NavLinks />
-        </ul>
-        <ThemeToggle />
-      </div>
-    </div>
-  );
-}
+const NAV_ITEMS = [
+  { label: "About", href: "#about", newTab: false },
+  { label: "Skills", href: "#skills", newTab: false },
+  { label: "Projects", href: "#projects", newTab: false },
+  { label: "Contact", href: "#contact", newTab: false },
+  { label: "Resume", href: "/resume", newTab: true },
+];
 
-function NavLinks() {
+export function Navbar() {
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  useEffect(() => {
+    function handleScroll() {
+      if (window.scrollY > 50) {
+        setIsScrolled(true);
+      } else {
+        setIsScrolled(false);
+      }
+    }
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <>
-      <li>
-        <DropdownLink href="/#portfolio">Portfolio</DropdownLink>
-      </li>
-      <li>
-        <DropdownLink href="/#about">About</DropdownLink>
-      </li>
-      <li>
-        <DropdownLink href="/resume" newTab>
-          Resume
-        </DropdownLink>
-      </li>
-      <li>
-        <DropdownLink href="/#about">Contact</DropdownLink>
-      </li>
-    </>
+    <nav
+      className={`fixed w-full top-0 z-50 transition-all duration-300 ${
+        isScrolled ? "bg-background/80 backdrop-blur-sm border-b shadow-xs" : "bg-transparent"
+      }`}
+    >
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between h-16">
+          <Link href="/#home" className="text-2xl font-bold text-primary">
+            MH
+          </Link>
+
+          {/* Desktop nav */}
+          <NavigationMenu className="hidden md:flex">
+            <NavigationMenuList className="space-x-8">
+              {NAV_ITEMS.map((i) => (
+                <NavigationMenuItem key={i.label}>
+                  <Link href={i.href} legacyBehavior passHref>
+                    <NavigationMenuLink target={i.newTab ? "_blank" : "_self"}>{i.label}</NavigationMenuLink>
+                  </Link>
+                </NavigationMenuItem>
+              ))}
+            </NavigationMenuList>
+          </NavigationMenu>
+
+          <div className="flex justify-center">
+            <ThemeToggle />
+
+            <Button
+              variant="ghost"
+              className="md:hidden"
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            >
+              {isMobileMenuOpen ? <Close /> : <Menu />}
+            </Button>
+          </div>
+        </div>
+
+        {/* Mobile nav */}
+        {isMobileMenuOpen && (
+          <div className="md:hidden pt-2 pb-4 border-t">
+            <div className="flex flex-col space-y-3 px-2 animate-fade-in">
+              {NAV_ITEMS.map((i) => (
+                <Link
+                  key={i.label}
+                  href={i.href}
+                  target={i.newTab ? "_blank" : "_self"}
+                  className="px-3 py-2 rounded-md text-base font-medium text-foreground/80 hover:text-primary hover:bg-primary/10"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  {i.label}
+                </Link>
+              ))}
+            </div>
+          </div>
+        )}
+      </div>
+    </nav>
   );
 }

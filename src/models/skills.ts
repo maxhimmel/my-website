@@ -4,22 +4,28 @@ import { isAdmin } from "./lib/utils";
 export const Skills: CollectionConfig = {
   slug: "skills",
   access: {
-    unlock: isAdmin,
     create: isAdmin,
     delete: isAdmin,
+    unlock: isAdmin,
     update: isAdmin,
   },
   orderable: true,
   fields: [
     {
-      name: "name",
+      name: "category",
       type: "text",
       required: true,
     },
     {
-      name: "reactIcon",
-      type: "text",
+      name: "skills",
+      type: "array",
       required: true,
+      fields: [
+        {
+          name: "name",
+          type: "text",
+        },
+      ],
     },
   ],
 };

@@ -1,10 +1,11 @@
 import config from "@payload-config";
 import { getPayload } from "payload";
 import { type Skill } from "../../../../payload-types";
-import { AnchorScrollOffset } from "../lib/anchorScrollOffset";
-import { ReactIcon } from "../lib/reactIcon";
+import { Section } from "../lib/section/section";
 
-export async function SkillsBanner() {
+type SkillItems = Skill["skills"];
+
+export async function Skills() {
   const payload = await getPayload({ config });
   const { docs: skills } = await payload.find({
     collection: "skills",
@@ -12,32 +13,36 @@ export async function SkillsBanner() {
   });
 
   return (
-    <div className="flex w-full bg-base-200 overflow-x-clip border-t-2 border-b-2 border-primary drop-shadow-xl shadow-xl dark:shadow-neutral">
-      <AnchorScrollOffset id="skills" />
-      <Skills skills={skills} />
-      <Skills skills={skills} />
-    </div>
-  );
-}
+    <Section.Root id="skills">
+      <Section.Header order="02" title="Skills" />
 
-function Skills({ skills }: { skills: Skill[] }) {
-  return (
-    <div className="flex animate-[scroll-left_80s_linear_infinite]">
-      {skills.map((s) => (
-        <Skill key={s.id} skill={s} />
-      ))}
-    </div>
-  );
-}
-
-function Skill({ skill }: { skill: Skill }) {
-  return (
-    <div className="stat odd:text-primary odd:[&_.icon]:bg-primary even:text-secondary even:[&_.icon]:bg-secondary">
-      <div className="stat-figure size-8">
-        <ReactIcon icon={skill.reactIcon} className="size-8" />
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        {skills.map((skill, index) => (
+          <div
+            key={skill.id}
+            className="opacity-0 animate-slide-up"
+            style={{ animationDelay: `${index * 0.2}s` }}
+          >
+            <SkillCard category={skill.category} items={skill.skills} />
+          </div>
+        ))}
       </div>
-      {/* <div className="stat-title">{name}</div> */}
-      <div className="stat-value">{skill.name}</div>
+    </Section.Root>
+  );
+}
+
+function SkillCard({ category, items }: { category: string; items: SkillItems }) {
+  return (
+    <div className="bg-card border rounded-lg p-6 transition-all duration-300 hover:shadow-md hover:border-primary/50">
+      <h3 className="text-xl font-semibold mb-4 text-primary">{category}</h3>
+      <ul className="space-y-2">
+        {items.map((item) => (
+          <li key={item.id} className="flex items-center">
+            <span className="mr-2 text-primary">&gt;</span>
+            {item.name}
+          </li>
+        ))}
+      </ul>
     </div>
   );
 }

@@ -1,21 +1,20 @@
 import { GlobalConfig } from "payload";
 import { isAdmin } from "./lib/utils";
 
-export const AboutMe: GlobalConfig = {
-  slug: "aboutMe",
+export const Hero: GlobalConfig = {
+  slug: "hero",
   access: {
     update: isAdmin,
   },
   fields: [
     {
-      name: "summary",
+      name: "tagline",
       type: "richText",
       required: true,
     },
     {
-      name: "profilePic",
-      type: "upload",
-      relationTo: "media",
+      name: "summary",
+      type: "richText",
       required: true,
     },
   ],

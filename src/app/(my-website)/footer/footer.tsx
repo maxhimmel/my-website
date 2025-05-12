@@ -1,45 +1,19 @@
-import Image from "next/image";
-import { PropsWithChildren } from "react";
-import { SiGithub, SiLinkedin } from "react-icons/si";
-import { getAboutMe } from "../about/profileService";
-
-export async function Footer() {
-  const aboutMe = await getAboutMe();
+export function Footer() {
+  const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="footer sm:footer-horizontal bg-neutral text-neutral-content items-center p-4">
-      <aside className="grid-flow-col items-center">
-        <div className="mask mask-circle size-14 relative">
-          <Image
-            src={aboutMe.profilePic.url as string}
-            width={56}
-            height={56}
-            alt="Picture of Max Himmel"
-            className="absolute bottom-0.5"
-          />
+    <footer className="py-8 border-t">
+      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex flex-col md:flex-row justify-between items-center">
+          <p className="text-foreground/70 text-sm">&copy; {currentYear} Max Himmel. All rights reserved.</p>
+
+          <div className="mt-4 md:mt-0">
+            <p className="text-foreground/70 text-sm">
+              Designed & Built with Next.js, Shadcn, & Payload CMS.
+            </p>
+          </div>
         </div>
-        <i>
-          Created by Max Himmel using <HoverLink href="https://nextjs.org/">Next.js</HoverLink>,{" "}
-          <HoverLink href="https://payloadcms.com/">Payload CMS</HoverLink>, &{" "}
-          <HoverLink href="https://daisyui.com/">DaisyUI</HoverLink> <b>♡</b>
-        </i>
-      </aside>
-      <nav className="grid-flow-col gap-4 md:place-self-center md:justify-self-end">
-        <a href="https://github.com/maxhimmel" className="btn btn-square" target="_blank">
-          <SiGithub className="size-8" />
-        </a>
-        <a href="https://linkedin.com/in/maxhimmel" className="btn btn-square" target="_blank">
-          <SiLinkedin className="size-8" />
-        </a>
-      </nav>
+      </div>
     </footer>
-  );
-}
-
-function HoverLink({ href, children }: { href: string } & PropsWithChildren) {
-  return (
-    <a href={href} target="_blank" className="hover:underline">
-      {children}
-    </a>
   );
 }
