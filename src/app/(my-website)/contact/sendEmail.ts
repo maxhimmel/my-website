@@ -1,6 +1,7 @@
 "use server";
 
 import nodemailer from "nodemailer";
+import { env } from "../../../env";
 
 export type Result = {
   sent: boolean;
@@ -14,12 +15,12 @@ export async function sendEmail(myEmail: string, prevState: Result, form: FormDa
       secure: false,
       auth: {
         user: "api",
-        pass: process.env.CONTACT_EMAIL_PASSWORD,
+        pass: env.CONTACT_EMAIL_PASSWORD,
       },
     });
 
     const info = await transporter.sendMail({
-      from: `"${form.get("name")}" <${process.env.CONTACT_EMAIL}>`,
+      from: `"${form.get("name")}" <${env.CONTACT_EMAIL}>`,
       to: myEmail,
       ...formatMessage(form),
     });
