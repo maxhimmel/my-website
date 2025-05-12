@@ -16,6 +16,7 @@ export default async function Resume() {
   const payload = await getPayload({ config });
   const data = await payload.findGlobal({ slug: "resume" });
   const resume = data.resume as Media;
+  const resumeText = data.resumeText as Media;
 
   return (
     <main className="container mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-16">
@@ -88,7 +89,7 @@ export default async function Resume() {
                       Text-only version for ATS systems and accessibility.
                     </p>
                     <Button variant="outline" className="mt-auto" asChild>
-                      <a href="/resume.txt" download="Max_Himmel_Resume.txt">
+                      <a href={resumeText.url!} download="Max_Himmel_Resume.txt">
                         <Download className="mr-2 h-4 w-4" /> Download Text Version
                       </a>
                     </Button>

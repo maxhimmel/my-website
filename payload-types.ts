@@ -449,6 +449,7 @@ export interface Contact {
 export interface Resume {
   id: string;
   resume: string | Media;
+  resumeText: string | Media;
   updatedAt?: string | null;
   createdAt?: string | null;
 }
@@ -493,6 +494,7 @@ export interface ContactSelect<T extends boolean = true> {
  */
 export interface ResumeSelect<T extends boolean = true> {
   resume?: T;
+  resumeText?: T;
   updatedAt?: T;
   createdAt?: T;
   globalType?: T;

@@ -13,5 +13,11 @@ export const Resume: GlobalConfig = {
       relationTo: "media",
       required: true,
     },
+    {
+      name: "resumeText",
+      type: "upload",
+      relationTo: "media",
+      required: true,
+    },
   ],
 };
