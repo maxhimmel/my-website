@@ -3,6 +3,7 @@ import "./globals.css";
 import { Navbar } from "./navbar/navbar";
 import { Footer } from "./footer/footer";
 import { ThemeProvider } from "next-themes";
+import { Toaster } from "@/components/ui/sonner";
 
 export const metadata: Metadata = {
   title: "Max Himmel | Web Developer",
@@ -28,6 +29,7 @@ export default function RootLayout({
             <Footer />
           </ThemeProvider>
         </div>
+        <Toaster />
       </body>
     </html>
   );
