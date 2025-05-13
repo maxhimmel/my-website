@@ -40,7 +40,9 @@ export function Navbar() {
   return (
     <nav
       className={`fixed w-full top-0 z-50 transition-all duration-300 ${
-        isScrolled ? "bg-background/80 backdrop-blur-sm border-b shadow-xs" : "bg-transparent"
+        isScrolled || isMobileMenuOpen
+          ? "bg-background/80 backdrop-blur-sm border-b shadow-xs"
+          : "bg-transparent"
       }`}
     >
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
