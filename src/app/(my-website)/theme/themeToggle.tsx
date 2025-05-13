@@ -23,7 +23,6 @@ function Toggle() {
   return (
     <Button
       variant="ghost"
-      className="rounded-full hover:cursor-pointer"
       size="icon"
       onClick={() => {
         setTheme(resolvedTheme !== "dark" ? "dark" : "light");
