@@ -13,10 +13,10 @@ import { useEffect, useState } from "react";
 import { ThemeToggle } from "../theme/themeToggle";
 
 const NAV_ITEMS = [
-  { label: "About", href: "#about", newTab: false },
-  { label: "Skills", href: "#skills", newTab: false },
-  { label: "Projects", href: "#projects", newTab: false },
-  { label: "Contact", href: "#contact", newTab: false },
+  { label: "About", href: "/#about", newTab: false },
+  { label: "Skills", href: "/#skills", newTab: false },
+  { label: "Projects", href: "/#projects", newTab: false },
+  { label: "Contact", href: "/#contact", newTab: false },
   { label: "Resume", href: "/resume", newTab: true },
 ];
 
