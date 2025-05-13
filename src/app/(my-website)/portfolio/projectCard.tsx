@@ -26,7 +26,7 @@ export function ProjectCard({ project, isEven }: ProjectCardProps) {
         }
       },
       {
-        threshold: 0.25,
+        threshold: 0.175,
       }
     );
 

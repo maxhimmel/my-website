@@ -69,7 +69,7 @@ export function Navbar() {
 
             <Button
               variant="ghost"
-              className="md:hidden"
+              className="md:hidden size-9"
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             >
               {isMobileMenuOpen ? <Close /> : <Menu />}

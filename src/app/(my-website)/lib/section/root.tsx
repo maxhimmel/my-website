@@ -15,6 +15,7 @@ export function Root({ id, children }: RootProps) {
         const [entry] = entries;
         if (entry.isIntersecting) {
           entry.target.classList.add("opacity-100");
+          entry.target.classList.remove("opacity-0");
           observer.unobserve(entry.target);
         }
       },
