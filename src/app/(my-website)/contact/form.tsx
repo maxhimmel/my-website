@@ -13,13 +13,15 @@ type Props = {
 };
 
 export function Form({ email }: Props) {
-  const [state, formAction, pending] = useActionState(sendEmail.bind(null, email), { sent: false });
+  const [state, formAction, pending] = useActionState(sendEmail.bind(null, email), { sent: null });
 
   useEffect(() => {
-    if (state.sent) {
-      toast.success("Email sent!", { description: "Thanks for reaching out 👋" });
-    } else {
-      toast.error("Something went wrong.", { description: "I'm sorry about that 🤔" });
+    if (state.sent !== null) {
+      if (state.sent) {
+        toast.success("Email sent!", { description: "Thanks for reaching out 👋" });
+      } else {
+        toast.error("Something went wrong.", { description: "I'm sorry about that 🤔" });
+      }
     }
   }, [state]);
 

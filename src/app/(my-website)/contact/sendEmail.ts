@@ -4,7 +4,7 @@ import nodemailer from "nodemailer";
 import { env } from "../../../env";
 
 export type Result = {
-  sent: boolean;
+  sent: boolean | null;
 };
 
 export async function sendEmail(myEmail: string, prevState: Result, form: FormData): Promise<Result> {
