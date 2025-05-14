@@ -3,7 +3,7 @@
 import { Button } from "@/components/ui/button";
 import { ExternalLink, Github } from "lucide-react";
 import Image from "next/image";
-import { useEffect, useRef } from "react";
+import { useScrollIntersect } from "../lib/scrollIntersect";
 import { Project } from "./portfolioService";
 
 interface ProjectCardProps {
@@ -12,34 +12,16 @@ interface ProjectCardProps {
 }
 
 export function ProjectCard({ project, isEven }: ProjectCardProps) {
-  const cardRef = useRef<HTMLDivElement>(null);
+  const { ref: cardRef } = useScrollIntersect<HTMLDivElement>({
+    threshold: 0.85,
+    onIntersect: (element) => {
+      element.classList.add("opacity-100");
+      element.classList.remove("opacity-0");
 
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        const [entry] = entries;
-        if (entry.isIntersecting) {
-          entry.target.classList.add("opacity-100");
-          entry.target.classList.add(isEven ? "translate-x-0" : "-translate-x-0");
-          entry.target.classList.remove(isEven ? "translate-x-10" : "-translate-x-10");
-          observer.unobserve(entry.target);
-        }
-      },
-      {
-        threshold: 0.175,
-      }
-    );
-
-    if (cardRef.current) {
-      observer.observe(cardRef.current);
-    }
-
-    return () => {
-      if (cardRef.current) {
-        observer.unobserve(cardRef.current);
-      }
-    };
-  }, [isEven]);
+      element.classList.add(isEven ? "translate-x-0" : "-translate-x-0");
+      element.classList.remove(isEven ? "translate-x-10" : "-translate-x-10");
+    },
+  });
 
   return (
     <div

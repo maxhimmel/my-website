@@ -1,39 +1,20 @@
 "use client";
 
-import { PropsWithChildren, useEffect, useRef } from "react";
+import { PropsWithChildren } from "react";
+import { useScrollIntersect } from "../scrollIntersect";
 
 type RootProps = PropsWithChildren & {
   id: string;
 };
 
 export function Root({ id, children }: RootProps) {
-  const sectionRef = useRef<HTMLElement>(null);
-
-  useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        const [entry] = entries;
-        if (entry.isIntersecting) {
-          entry.target.classList.add("opacity-100");
-          entry.target.classList.remove("opacity-0");
-          observer.unobserve(entry.target);
-        }
-      },
-      {
-        threshold: 0.1,
-      }
-    );
-
-    if (sectionRef.current) {
-      observer.observe(sectionRef.current);
-    }
-
-    return () => {
-      if (sectionRef.current) {
-        observer.unobserve(sectionRef.current);
-      }
-    };
-  }, []);
+  const { ref: sectionRef } = useScrollIntersect({
+    threshold: 0.85,
+    onIntersect: (element) => {
+      element.classList.add("opacity-100");
+      element.classList.remove("opacity-0");
+    },
+  });
 
   return (
     <section
