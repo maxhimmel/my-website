@@ -1,5 +1,6 @@
 import { CollectionConfig } from "payload";
 import { isAdmin } from "./lib/utils";
+import sharp from "sharp";
 
 export const Media: CollectionConfig = {
   slug: "media",
@@ -12,6 +13,7 @@ export const Media: CollectionConfig = {
   },
   upload: {
     staticDir: "media",
+    resizeOptions: {},
     // imageSizes: [
     //   {
     //     name: "thumbnail",
