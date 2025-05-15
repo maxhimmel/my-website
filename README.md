@@ -14,15 +14,17 @@
 
 ## :pencil: Description
 
-This website was created using Next.js for the frontend/backend, DaisyUI to quickly style the frontend, and Payload CMS to help me manage the content of my site without needing to push changes to this repo.
+This website was created using Next.js for the frontend/backend, Shadcn to quickly style the frontend, and Payload CMS to help me manage the content of my site without needing to push changes to this repo.
 
 Next.js has built all the pages as ISR since the data from my CMS doesn't change too frquently. This is pretty neat because it means that the pages are generated essentially once at build time and are server-side rendered. They "incrementally" rebuild every 24 hours.
+
+Payload CMS is a wonderful addition because it allows to me edit the content of my site via an admin panel. This means any content adjustments I make to my site won't require modifications to the repo or new deployments.
 
 ## :computer: Technologies Used
 
 ![Next.js](https://img.shields.io/badge/-Next-05122A?style=flat&logo=nextdotjs)
 ![Payload CMS](https://img.shields.io/badge/-Payload-05122A?style=flat&logo=payloadcms)
-![daisyUI](https://img.shields.io/badge/-daisyUI-05122A?style=flat&logo=daisyUI)
+![Shadcn](https://img.shields.io/badge/-shadcn/ui-05122A?style=flat&logo=shadcnui)
 ![TypeScript](https://img.shields.io/badge/-TypeScript-05122A?style=flat&logo=typescript)
 ![MongoDB](https://img.shields.io/badge/-MongoDB-05122A?style=flat&logo=mongodb)
 ![React](https://img.shields.io/badge/-React-05122A?style=flat&logo=react)
