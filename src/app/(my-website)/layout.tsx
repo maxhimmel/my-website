@@ -4,6 +4,7 @@ import { Navbar } from "./navbar/navbar";
 import { Footer } from "./footer/footer";
 import { ThemeProvider } from "next-themes";
 import { Toaster } from "@/components/ui/sonner";
+import { PostHogProvider } from "@/components/PostHogProvider";
 
 export const metadata: Metadata = {
   title: "Max Himmel | Web Developer",
@@ -22,14 +23,16 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body>
-        <div className="min-h-screen bg-background text-foreground overflow-x-clip">
-          <ThemeProvider defaultTheme="light" attribute="class">
-            <Navbar />
-            {children}
-            <Footer />
-          </ThemeProvider>
-        </div>
-        <Toaster />
+        <PostHogProvider>
+          <div className="min-h-screen bg-background text-foreground overflow-x-clip">
+            <ThemeProvider defaultTheme="light" attribute="class">
+              <Navbar />
+              {children}
+              <Footer />
+            </ThemeProvider>
+          </div>
+          <Toaster />
+        </PostHogProvider>
       </body>
     </html>
   );
